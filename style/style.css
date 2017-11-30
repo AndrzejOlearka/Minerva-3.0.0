@@ -1,0 +1,748 @@
+body
+{
+	background: url(../img/tlo1.jpg); /*https://www.toptal.com/designers/subtlepatterns/*/
+	font-family: 'Milonga', cursive;
+	color: #e3e3e3;
+	margin-left: auto; 
+	margin-right: auto;
+	text-align:center;
+}
+#container
+{
+	width: 1200px;
+	background-color:#334657;
+	margin-left: auto; 
+	margin-right: auto;	
+	padding: 20px; 
+	margin-top: 20px;
+	matgin-bottom: 20px;
+	padding-top: 40px;	
+}
+
+#top 
+{
+	width: 700px;
+	height: 225px;
+	background-image: url(../img/mineraly.jpg);
+	margin-left: auto; 
+	margin-right: auto;
+
+}
+
+#top h1 
+{
+	font-size: 100px;
+	padding-top: 30px;
+	color: #59A8A4;
+	text-shadow: 4px 4px 4px #335699;
+}
+
+h1
+{
+	text-shadow: 4px 4px 4px  #283540;
+}
+
+#header
+{
+}
+
+#nav 
+{
+	background-color: #59A8A4;
+	border-top: 10px solid #336699;
+	border-bottom: 10px solid #336699;
+	color: #336699;
+	width: 1060px;
+	margin-left: auto; 
+	margin-right: auto;
+	}
+
+ol
+{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	font-size: 18px;
+	height: 35px;
+	line-height: 200%;
+	display: inline-block;
+}
+
+ol > li
+
+{
+	float: left;
+	width: 200px;
+	height: 40px;
+	border-right: 10px solid #336699;
+	letter-spacing: 3px;
+	font-size: 20px;
+	font-weight: 700;
+	cursor: pointer;
+	
+}
+
+ol > li:first-child
+{
+	border-left: 10px solid #336699;
+}
+
+li a
+{
+	text-decoration:none;
+	color: #e3e3e3;
+}
+
+ol > li:hover > a
+{
+	color: #336699;
+}
+
+#content
+{
+	line-height: 230%;
+	letter-spacing: 1px;
+	background-color: #5454fg;
+}
+
+#content h2
+{
+	line-height: 230%;
+	letter-spacing: 1px;
+	background-color: #5454fg;
+	text-shadow: 3px 3px 3px #283540;
+	font-size: 20px;
+}
+
+#footer
+{
+	width: 1180px;
+	height: 180px;
+	background-color:#334657;
+	margin-left: auto; 
+	margin-right: auto;	
+	padding: 20px; 
+}	
+
+.social
+{
+	background-color:#334657;
+	margin-left: auto; 
+	margin-right: auto;	
+	width: 250px;
+	height: 155px;
+	float: left;
+	border: 10px solid #336699;
+	background-color: #59A8A4;
+}
+
+#stopka
+{
+	width: 620px;
+	height: 155px;
+	border-top:  10px solid #336699;
+	border-bottom:  10px solid #336699;
+	float: left;
+	margin-left: auto; 
+	margin-right: auto;	
+	background-color: #59A8A4;
+
+}
+
+#stopka h1 
+{
+		text-align: center;
+		padding-top: 0px;
+}
+
+.fb
+{
+	width: 250px;
+	height: 155px;
+	float: left;
+	
+}
+
+.fb:hover
+{
+	background-color: #4668b3;
+}
+
+.fblink
+{
+	display: block;
+	text-decoration: none;
+	color: #e3e3e3;;
+}
+
+.tw
+{
+	width: 250px;
+	height: 155px;
+	float: left;
+}
+
+.tw:hover
+{
+	background-color: #3095d3;
+}
+
+.twlink
+{
+	display: block;
+	text-decoration: none;
+	color: #e3e3e3;;
+}
+
+.btn-lg 
+{
+	color:  #334657;
+	font-family: 'Milonga', cursive;
+	font-weight: 700;
+	width:140px;
+	height: 40px;
+	font-size: 20px;
+}
+
+.input
+{
+	color:  #334657;
+	font-weight: 700;
+	width:150px;
+	height: 30px;
+	font-size: 16px;
+	text-align: justify;
+	background-color: #DADADA;
+}
+
+.g-recaptcha
+{
+	width: 300px;
+	margin: auto;
+	position: center;
+}
+
+.error
+{
+	color:red;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.table 
+{
+	margin-left: auto; 
+	margin-right: auto;
+	border-color: #336699;
+	border-style: solid;
+}
+
+.table td
+{
+	background-color: #59A8A4;
+	border-color: #336699;
+	border-style: solid;
+	border-width: 3px;
+	font-size: 22px;
+	text-shadow: 3px 3px 3px #283540;
+	margin-left: none;
+	margin-right: none;
+}
+
+.table img
+{
+	width: 80px;	
+	height:100px;
+	border-color: #336699;
+	border-style: solid;
+	border-width: 3px;
+}
+
+.td1
+{
+	width: 120px;
+	height: 100px;
+	margin-top: 20px;
+}
+
+.td2
+{
+	width: 300px;
+	height: 100px;
+	margin: none;
+	padding: none;
+}
+
+.button
+{
+	width: 120px;
+	height: 40px;
+	text-decoration: none;
+	font-size: 16px;
+	text-shadow: 3px 3px 3px #283540;
+	font-family: 'Milonga', cursive;
+	text-underline: none;
+}
+
+.buttonOdbierzNagrode
+{
+	width: 160px;
+	height: 40px;
+	text-decoration: none;
+	font-size: 16px;
+	text-shadow: 3px 3px 3px #283540;
+	font-family: 'Milonga', cursive;
+	text-underline: none;
+}
+
+#navgra 
+{
+	background-color: #59A8A4;
+	border-top: 10px solid #336699;
+	border-bottom: 10px solid #336699;
+	color: #336699;
+	width: 640px;
+	margin-left: auto; 
+	margin-right: auto;
+	height: 40px;
+}
+
+.btn-lg.rejestracja
+{
+	color:  #334657;
+	font-family: 'Milonga', cursive;
+	font-weight: 700;
+	width:180px;
+	height: 40px;
+	font-size: 20px;
+}
+
+.zadania
+{
+	background-color: #59A8A4;
+	border:10px solid #336699;
+	color: #336699;
+	width: 1000px;
+	margin-left: auto; 
+	margin-right: auto;
+	height: 440px;
+}
+
+.kopalnia
+{
+	background-color: #59A8A4;
+	border:10px solid #336699;
+	color: #336699;
+	width: 1000px;
+	margin-left: auto; 
+	margin-right: auto;
+	height: 440px;
+}
+
+.zdjecie
+{
+	background-color: #59A8A4;
+	border:10px solid #336699;
+	color: #336699;
+	width: 240px;
+	height: 200px;
+	margin: 10px;
+}
+
+.zdjeciekopalni
+{
+	background-color: #59A8A4;
+	border:10px solid #336699;
+	color: #336699;
+	width: 340px;
+	height: 200px;
+	margin: 10px;
+}
+
+.tytul
+{
+	background-color: #59A8A4;
+	border:10px solid #336699;
+	width: 240px;
+	height: 160px;
+	margin: 10px;
+	float: left; 
+	color: #e3e3e3;
+	text-shadow: 6px 6px 6px #334657;
+	font-weight:700;
+}
+
+.tytulkopalni
+{
+	background-color: #59A8A4;
+	border:10px solid #336699;
+	width: 340px;
+	height: 160px;
+	margin: 10px;
+	float: left; 
+	color: #e3e3e3;
+	text-shadow: 6px 6px 6px #334657;
+	font-weight:700;
+}
+
+.zdjecie img
+{
+width: 200px;
+height: 160px;
+text-align: center;
+margin-top: 20px;
+}
+
+.zdjeciekopalni img
+{
+width: 300px;
+height: 160px;
+text-align: center;
+margin-top: 20px;
+}
+
+.opis
+{
+	background-color: #59A8A4;
+	border:10px solid #336699;
+	width: 610px;
+	height: 360px;
+	margin-left: 30px; 
+	margin-right: 30px;
+	text-align: justify;
+	float:left;
+	margin: 10px;
+	padding: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 30px;
+	font-size: 20px;
+	color: #e3e3e3;
+	text-shadow: 3px 3px 3px #334657;
+	text-indent: 30px; 
+}
+
+.opis h3
+{
+	margin: 0px;
+}
+ 
+.opis:first-letter 
+{
+	font-size: 140%;
+
+}
+
+.opiskopalni
+{
+	background-color: #59A8A4;
+	border:10px solid #336699;
+	width: 510px;
+	height: 360px;
+	margin-left: 30px; 
+	margin-right: 30px;
+	text-align: justify;
+	float:left;
+	margin: 10px;
+	padding: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 30px;
+	font-size: 20px;
+	color: #e3e3e3;
+	text-shadow: 4px 4px 4px #334657;
+	text-indent: 30px; 
+}
+
+.opiskopalni h3
+{
+	padding-top: 0px;
+	margin-top: 0px;
+}
+
+.zdjecietytul
+{
+	float:left;
+}
+
+.zdjecieopis
+{
+	float:left;
+}
+
+h3
+{
+	text-decoration: underline;
+}
+
+h4
+{
+	color: #003366;
+	text-align: center;
+	text-indent: 0px;
+	margin: 0px;
+}
+
+.buttonStart
+{
+	color:  #334657;
+	font-family: 'Milonga', cursive;
+	font-weight: 700;
+	width:220px;
+	height: 40px;
+	font-size: 20px;
+	margin-left: 195px;
+	margin-top: 10px;
+	border-radius: 5px;
+	box-shadow: 0 3px #999;
+	cursor: pointer;
+}
+
+.buttonKopalnia
+{
+	color:  #334657;
+	font-family: 'Milonga', cursive;
+	font-weight: 700;
+	width:220px;
+	height: 40px;
+	font-size: 20px;
+	margin-left: 110px;
+	margin-top: 10px;
+	border-radius: 5px;
+	box-shadow: 0 3px #999;
+	cursor: pointer;
+}
+
+.submitSell
+{
+	color:  #334657;
+	font-family: 'Milonga', cursive;
+	font-weight: 700;
+	width:100px;
+	height: 38px;
+	font-size: 20px;
+	margin-top: 10px;
+	cursor: pointer;
+	background-color: #DADADA;
+}
+
+.insert
+{
+	width: 100px;
+	height: 30px;
+	font-family: 'Milonga', cursive;
+	font-weight: 400;
+	font-size: 18px;
+	letter-spacing: 2px;
+	background-color: #DADADA;
+}
+
+#autor
+{
+	background-color: #59A8A4;
+	border:10px solid #336699;
+	width: 800px;
+	height: 710px;	
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.autorIMG 
+{
+	border:10px solid #336699;
+	height: 320px;
+	width: 220px;
+	margin-top:10px;
+	margin-left: 10px;
+}
+
+.autorIMG img
+{
+	margin-top:10px;
+	height: 300px;
+	width: 200px;
+	margin-left: 10px;
+}
+
+.opisautora
+{
+	border:10px solid #336699;
+	height: 250px;
+	width: 490px;
+	margin: 10px;
+	font-size: 14px;
+	padding: 10px;
+	font-weight: 800;
+}
+
+.autor1 h1
+{
+	text-align: center;
+	font-size:34px;
+	margin: 0px;
+	padding: 0px;
+	margin-top:12px;
+}
+
+.statystykiNumer 
+{
+	width: 40px;
+}
+.statystykiGracz
+{
+
+}
+.statystykiWynik
+{
+	width: 180px;
+}
+#samouczek
+{
+	background-color: #59A8A4;
+	border:10px solid #336699;
+	font-size: 20px;
+	color: #e3e3e3;
+	width: 860px;
+	height: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#samouczek div 
+{
+	display:none;
+}
+
+#navgra li
+{
+	color:#e3e3e3;
+}
+
+#navgra li:hover
+{
+	color:#336699;
+}
+
+#samouczek .zdjecietytul
+{
+float:left;
+margin:10px;
+}
+#samouczek .tytul
+{
+	font-size:16px;
+	height: 200px;
+}
+#samouczek .tytul h3
+{
+	font-size:16px;
+	height: 200px;
+	margin:0px;
+	padding:0px;
+}
+.samouczekOpis h1
+{
+	text-align: center;
+	margin: 0px;
+}
+
+.samouczekOpis
+{
+	background-color: #59A8A4;
+	border:10px solid #336699;
+	font-size: 20px;
+	color: #e3e3e3;
+	width: 470px;
+	height: 410px;
+	float:left;
+	margin:20px;
+	text-align:justify;
+	padding:15px;
+	font-weight:700;
+}
+
+.samouczekButton
+{
+	width: 80px;
+	height:40px;
+	font-family: 'Milonga';
+	font-size: 16px;
+}
+#samouczek2
+{
+	background-color: #59A8A4;
+	border:10px solid #336699;
+	font-size: 20px;
+	color: #e3e3e3;
+	width: 860px;
+	height: 570px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#samouczek2 div 
+{
+	display:none;
+}
+
+#samouczek2 .zdjecietytul
+{
+	float:left;
+	margin: 20px;
+	margin-right: 0;
+	padding: 20px;
+	background-color: #59A8A4;
+	border:10px solid #336699;
+	font-size: 20px;
+	color: #e3e3e3;
+	width: 280px;
+	height: 470px;
+}
+
+#samouczek2 .samouczekOpis
+{
+	background-color: #59A8A4;
+	border:10px solid #336699;
+	font-size: 20px;
+	color: #e3e3e3;
+	width: 410px;
+	height: 480px;
+	float:left;
+	margin:20px;
+	text-align:justify;
+	padding:15px;
+	font-weight:700;
+}
+#samouczek2 .zdjecietytul table td
+{
+	color: #336699;
+	border: 3px solid #336699;
+	font-weight: 800;
+	background: #38B0DE;
+}
+
+.divLogin
+{
+	width: 370px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.title
+{
+	float: left;
+	text-align: right;
+	width: 200px;
+	margin-right:10px;
+	margin-left: -60px;
+}
+
+#z2
+{display:none;}
+
+#show
+{display:true;}
+
+#show2
+{display:none;}
+
+.z3
+{display:true;}
+
