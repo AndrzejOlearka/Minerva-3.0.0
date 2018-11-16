@@ -1,3 +1,6 @@
+<!--trips subpage - main view-->
+<!--zakładka wyprawy - widok ogólny-->
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -44,11 +47,13 @@
 			
 			<div><h2>Wyrusz na jedną z wypraw i posiądź legendarne minerały!</h2></div><br />	
 			
-			
-			<div><h3 id="time"></h3></div>	 				
 			<div id="tekst"></div> 
+			<div><h3 id="time"></h3></div>	 				
+			
 
 <?php	
+
+echo $advance;
 
 if(isset($postRefreshAjax)){
 	echo $postRefreshAjax;
@@ -63,6 +68,10 @@ if(isset($tripPrizeInfo)){
 }
 
 $tripSession->tripsErrorStoppedTrip();
+
+for($i = 1; $i < 11; $i++){
+	$advance->advance($i);
+}
 
 ?>			
 		
@@ -132,10 +141,13 @@ $tripSession->tripsErrorStoppedTrip();
 	<script src="../public/javascript/trips-map.js"></script>	
 		
 	<!-- AJAX rozpoczęcie wyprawy -->	
-			<!-- AJAX wyświetlający czas po odświeżeniu -->
+	<script src="../public/javascript/trips-ajax.js"></script>	
+	
+	<!-- AJAX wyświetlający czas po odświeżeniu -->
 		
 	<script src="../public/javascript/trips-ajax2.js"></script>
-	<script src="../public/javascript/trips-ajax.js"></script>
+	
+
 		
 
 		

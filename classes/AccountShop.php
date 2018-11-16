@@ -3,7 +3,7 @@
 // obiekt pozwalający na zakup premium lub monet
 // object allowing for the purchase of premium or coins
 
-	Class Shop{
+	Class AccountShop{
 			
 			public function getPremium($premium){
 				

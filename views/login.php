@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<!--login subpage - main view-->
+<!--zakładka logowanie- widok ogólny-->
+
+<!DOCTYPE html>
 <html lang="pl">
 <head>
 
@@ -30,7 +33,7 @@
 
 			</header>
 
-			<form action="../classes/login-server.php" method="post" class="row form_registration col-10 col-sm-10 col-lg-6 offset-1 offset-sm-1 offset-lg-3 mb-5">
+			<form action="../controllers/login.php" method="post" class="row form_registration col-10 col-sm-10 col-lg-6 offset-1 offset-sm-1 offset-lg-3 mb-5">
 
 				<div class="form_registration_title col-sm-6 col-lg-4 offset-lg-1">Login:</div>
 				<div class="form_registration_input col-sm-6 col-lg-6"><input type="text" name="login"/></div>

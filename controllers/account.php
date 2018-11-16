@@ -1,11 +1,11 @@
 <?php
 
 	require_once '../views/partials/logged-checking.php';
-	$updateLevel = require '../classes/level-update-server.php';
-	
-	require '../classes/account-server.php';
-	require '../classes/account-premium.php';
-	
+
+	require '../classes/AccountPremiumInfo.php';
+	$premiumTime = AccountPremiumInfo::getInfo();
+
+	require '../classes/AccountShop.php';	
 	if(isset($_POST['premium'])){
 		$premium = $_POST['premium'];
 		$shop = new Shop();	
@@ -16,12 +16,19 @@
 		$shop = new Shop();	
 		$shop->getCoins($coins);
 	}		
-	
-		
-	
+
 	require '../sessions/account-sessions.php';
 	$accountSession = new AccountSessions();
-
-	require '../views/account.php';	
+		
+	require '../classes/Advance.php';
+	Advance::updateLevel();
+	
+	require '../sessions/advance-sessions.php';
+	$advance = new LevelUpdateSession();
+	
+	$query = require '../core/bootstrap.php';
+	$data = $query->select("SELECT * FROM user_data WHERE user = '$userName'");
+	
+	require_once '../views/account.php';	
 
 ?>

@@ -1,8 +1,8 @@
 
 $(document).ready(function(){
-			$('#czas').load("../controllers/expedition.php", function(){
+			$('#czas').load("../classes/expeditions-data.php", function(){
 				var czas = $(this).data("czas");
-				console.log("czas");										
+				console.log(czas);										
 				$.ajax({
 					url:"../controllers/expeditions.php",
 					method:"post",

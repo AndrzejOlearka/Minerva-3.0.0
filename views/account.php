@@ -1,3 +1,6 @@
+<!--account subpage - main view-->
+<!--zakładka Konto - widok ogólny-->
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -39,12 +42,16 @@
 
 		<?php
 
+		echo $advance;
 		$accountSession->accNickChangedSuccess();
 		$accountSession->accNickErrorLength();
 		$accountSession->accNickErrorSigns();
 		$accountSession->accNickErrorIdentical();
 
-
+		for($i = 1; $i < 11; $i++){
+			$advance->advance($i);
+		}		
+		
 		?>
 
 			<br /><h2>Prześledź swój poziom, doświadczenie oraz stan monet!</h2><br />

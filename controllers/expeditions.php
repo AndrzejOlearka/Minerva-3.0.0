@@ -1,31 +1,34 @@
 ﻿<?php
 
 	require '../views/partials/logged-checking.php';
-	$updateLevel = require '../classes/level-update-server.php';
 
-	require '../sessions/expeditions-sessions.php';
-	$expeditionSession = new ExpeditionsSessions();
-	require '../classes/expeditions-server.php';
+	require '../classes/Expedition.php';
 	
 	if(isset($_POST['zadanie'])){
 		$expedition = new Expedition($_POST['zadanie']);
 		$expeditionCheckLevelCoins = $expedition->checkRequiredCoinsLevel($_POST['zadanie']);
 		$expeditionSetTime = $expedition->setExpeditionNumberTime($_POST['zadanie']);
 	}
+
+	require '../classes/ExpeditionEndTimeInfo.php';
 	
 	if(isset($_POST['zadanie']) || isset($_POST['czas']) && !isset($_SESSION['expedition_stopped'])){
-		$ajaxJsonData = new ExpeditionEndTime();
+		$ajaxJsonData = new ExpeditionEndTimeInfo();
 		$ajaxJsonData = $ajaxJsonData->getEndTime();
 		echo json_encode($ajaxJsonData);
 		exit();
 	}
 	
+	require '../classes/ExpeditionAbort.php';
+	
 	if(isset($_POST['stopExpedition'])){
-		$abortExpedition = new AbortExpedition();
+		$abortExpedition = new ExpeditionAbort();
 		$abortExpedition->stopExpedition();
+		unset($_SESSION['expedition_stopped']);
 		exit();
 	}
-	require '../classes/expeditions-data.php';	
+	
+	require '../classes/ExpeditionPrize.php';	
 	
 	$query = require '../core/bootstrap.php';
 
@@ -47,7 +50,17 @@
 			$expeditionPrize = new ExpeditionPrize();
 			$expeditionPrizeInfo = $expeditionPrize->getExpeditionPrize($expeditionNumber);
 		}
-	}
+	}	
+	
+	require '../sessions/expeditions-sessions.php';
+	$expeditionSession = new ExpeditionsSessions();
+	
+	require '../classes/Advance.php';
+	Advance::updateLevel();
+	
+	require '../sessions/advance-sessions.php';
+	$advance = new LevelUpdateSession();
+	
 	require_once '../views/expeditions.php';	
 	
 ?>

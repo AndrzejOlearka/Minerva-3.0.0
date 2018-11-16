@@ -1,19 +1,27 @@
 ﻿<?php
 
 require_once '../views/partials/logged-checking.php';
-require '../classes/equipment-amount.php';
-$updateLevel = require '../classes/level-update-server.php';
 
-require '../classes/equipment-server.php';
+require '../classes/AmountMinerals.php';
+
+require '../classes/EquipmentShop.php';
 
 	for($nr = 0; $nr<=20; $nr++){
 		if(isset($_POST["insert$nr"])){
-			$bursztyny = new Equipment;
-			$bursztyny->sell($nr);
+			$soldMinerals = new EquipmentShop;
+			$soldMinerals->sell($nr);
 		}
 	}
 
 require_once '../sessions/equipment-sessions.php';
 $equipmentSession = new EquipmentSessions();
 
+require '../classes/Advance.php';
+Advance::updateLevel();
+
+require '../sessions/advance-sessions.php';
+$advance = new LevelUpdateSession();
+
 require '../views/equipment.php';
+
+

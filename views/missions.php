@@ -1,9 +1,5 @@
-﻿<?php
-
-// zakładka misje - widok główny
-// subpage missions - main view
-
-?>
+﻿<!--mission subpage - main view-->
+<!--zakładka Misje - widok ogólny-->
 
 <!DOCTYPE html>
 <html lang="pl">
@@ -54,6 +50,12 @@
 			$missionSession->misSessionLowAmountFirst();
 			$missionSession->misSessionLowAmountSecond();
 			$missionSession->misSessionCompleted();
+			
+			for($i = 1; $i < 11; $i++){
+				$advance->advance($i);
+			}
+
+
 			?>
 
 			<div class="row">

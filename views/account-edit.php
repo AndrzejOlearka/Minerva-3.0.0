@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<!--subpage of account subpage - main view-->
+<!--podstrona zakładki Konto - widok ogólny-->
+
+<!DOCTYPE html>
 <html lang="pl">
 <head>
 

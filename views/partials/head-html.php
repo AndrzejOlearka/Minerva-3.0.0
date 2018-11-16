@@ -13,5 +13,5 @@
 	<link rel="stylesheet" href="../public/social_icons_fontello/fontello.css"/>	
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
-	<script src="../Minerva/javascript/audio.js"></script>
-	<script src="../Minerva/javascript/audio2.js"></script>
+	<script src="../public/javascript/audio.js"></script>
+	<script src="../public/javascript/audio2.js"></script>

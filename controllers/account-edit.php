@@ -2,7 +2,7 @@
 	
 	require_once '../views/partials/logged-checking.php';
 	
-	require '../classes/account-edit-server.php';
+	require '../classes/AccountEdit.php';
 	
 	if(isset($_POST['editNick'])){
 	$nickEdit = new AccountEdit();
@@ -10,8 +10,8 @@
 	
 	}
 	if(isset($_POST['deleteNick'])){
-		$nickEdit = new AccountEdit();
-		$nickEdit->deleteAccount();
+		$deleteAccount = new AccountEdit();
+		$deleteAccount->deleteAccount();
 	}
 			
 	require '../sessions/account-sessions.php';

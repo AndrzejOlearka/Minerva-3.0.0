@@ -16,7 +16,6 @@
 			$minerals = ['jadeites', 'crystals', 'painites', 'fluorites', 'morganites', 'aquamarines', 'opales', 'pearls', 'cymophanes'];
 			$mineralsSession = ['jadeitów', 'kryształów górskich', 'painitów', 'fluorytów', 'morganitów', 'akwamarynów', 'opali', 'pereł', 'cymofanów'];			
 			$mineralsPrize = $minerals[$tripNumber];
-			$query->update("UPDATE trips_data SET trip_prize = false WHERE user = '$userName'");
 			
 			if(isset($_SESSION['only_exp']))
 			{
@@ -26,9 +25,8 @@
 				$tripPrizeInfo = "<br /><div class='success col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3'>Zadanie z poszukiwaniem ".$mineralsSession[$tripNumber]." zostało zakończone! <br />
 				Niestety twoja wyprawa zakończyła się marnie... nie zdobyłeś nic oprócz doświadczenia, które może ci się przydać w przyszłości.  
 				Otrzymałeś 20000 punktów doświadczenia</div><br />";		
-				$query->update("UPDATE trips_data SET trip_prize = false WHERE user = '$userName'");
 			}	
-			if(isset($_SESSION['only_coins'])){
+			else if(isset($_SESSION['only_coins'])){
 				$newExp= 40000+$data['exp'];
 				$query->update("UPDATE user_data SET exp = '$newExp' WHERE user = '$userName'");
 
@@ -46,9 +44,9 @@
 				$tripPrizeInfo = "<br /><div class='success col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3'>Zadanie z poszukiwaniem ".$mineralsSession[$tripNumber]." zostało zakończone!<br />
 				Niestety nie znalazłeś tego czego szukałeś, lecz w nagrodę dostaniesz trochę monet i niezbędnego doświadczenia. 
 				Otrzymałeś: ".$rand." monet oraz 40000 punktów doświadczenia.</div><br />";		
-				$query->update("UPDATE trips_data SET trip_prize = false WHERE user = '$userName'");			
+					
 			}	
-			if(isset($_SESSION['main_minerals'])){
+			else if(isset($_SESSION['main_minerals'])){
 				$newExp= 100000+$data['exp'];
 				$query->update("UPDATE user_data SET exp = '$newExp' WHERE user = '$userName'");
 				
@@ -66,10 +64,10 @@
 				unset($_SESSION['main_minerals']);			
 				$tripPrizeInfo = "<br /><div class='success col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3'>Zadanie z poszukiwaniem ".$mineralsSession[$tripNumber]." zostało zakończone!<br />
 				Wyprawa okazała się całkowitym sukcesem i znalazłeś legendarny kamień! Otrzymałeś: ".$rand2." ".$mineralsSession[$tripNumber]." oraz 100000 punktów doświadczenia</div><br />";				
-				$query->update("UPDATE trips_data SET trip_prize = false WHERE user = '$userName'");
+				
 			}	
-			return $tripPrizeInfo;
-			
+			$query->update("UPDATE trips_data SET trip_prize = false WHERE user = '$userName'");
+			return $tripPrizeInfo;		
 		}	
 	}
 	

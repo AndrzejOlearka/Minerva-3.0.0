@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<!--mines subpage - main view-->
+<!--zakładka kopalnie - widok ogólny-->
+
+<!DOCTYPE html>
 <html lang="pl">
 <head>
 
@@ -39,9 +42,6 @@
 
 if(isset($formMinesDailyPrize)){
 	echo $formMinesDailyPrize;
-}
-if($minesDailyPrize === false){
-	minesDailyPrizeInfo();
 }
 
 

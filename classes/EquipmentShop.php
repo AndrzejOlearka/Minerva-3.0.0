@@ -3,7 +3,7 @@
 // obiekt pozwalający na sprzedaż minerałów
 // object that allows to sell minerals
 
-class Equipment{
+class EquipmentShop{
 
 	public function sell($nr){
 
@@ -17,9 +17,15 @@ class Equipment{
 			'rubies', 'sapphires', 'diamonds', 'gold', 'sillver', 'morganites', 'fluorites',
 			'opales', 'jadeites', 'painites', 'crystals', 'aquamarines', 'pearls', 'cymophanes'
 		];
+		$mineralsSession = [
+			'bursztynów', 'agatów', 'malachitów', 'turkusów', 'ametystów', 'topazów',
+			'szmaragdów', 'rubinów', 'szafirów', 'diamentów', 'zlota', 'srebra', 'morganitów', 'fluorytów',
+			'opali', 'jadeitów', 'painitów', 'kryształów górskich', 'akwamarynów', 'pereł', 'cymofanów'
+		];
 		$coins = [1, 2, 3, 5, 10, 20, 50, 100, 200, 500, 20, 100, 10, 30, 60, 120, 300, 150, 250, 650, 1000];
 
 		$mineral = $minerals[$nr];
+		$mineralSession = $mineralsSession[$nr];
 		$coin = $coins[$nr];
 
 		if (is_numeric($_POST["insert$nr"]) == false){
@@ -56,7 +62,7 @@ class Equipment{
 
 					$_SESSION["value"] = $_POST["insert$nr"];
 					$_SESSION["coins"] = $coin1;
-					$_SESSION["minerals$mineral"] = $mineral;
+					$_SESSION["minerals$mineral"] = $mineralSession;
 					unset($_POST);
 				}
 			}

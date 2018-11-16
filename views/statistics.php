@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<!--statistics subpage - main view-->
+<!--zakładka statystyki - widok ogólny-->
+
+<!DOCTYPE html>
 <html lang="pl">
 <head>
 

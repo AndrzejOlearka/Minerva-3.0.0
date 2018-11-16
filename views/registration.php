@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<!--registration subpage - main view-->
+<!--zakładka rejestracja - widok ogólny-->
+
+<!DOCTYPE html>
 <html lang="pl">
 <head>
 
@@ -31,7 +34,7 @@
 
 			<?php if(!isset($_SESSION['registration_succesful'])): ?>
 
-			<form action="registration-server.php" method="post" class="row form_registration col-10 col-sm-10 col-lg-6 offset-1 offset-sm-1 offset-lg-3 mb-5">
+			<form action="../controllers/registration.php" method="post" class="row form_registration col-10 col-sm-10 col-lg-6 offset-1 offset-sm-1 offset-lg-3 mb-5">
 
 				<div class="form_registration_title col-sm-6 col-lg-4 offset-lg-1">Nickname:</div>
 				<div class="form_registration_input col-sm-6 col-lg-6"><input type="text" name="nick"/></div>

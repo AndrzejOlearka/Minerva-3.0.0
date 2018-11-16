@@ -1,12 +1,17 @@
 ﻿<?php
 
 	require_once '../views/partials/logged-checking.php';
-	$updateLevel = require '../classes/level-update-server.php';
 	
-	require '../classes/guilds-server.php';
+	require '../classes/Guild.php';
 	$guilds = new Guild;
 			
 	require '../sessions/guilds-sessions.php';
 	$guildsSession = new GuildSessions();
-
-	require '../views/guilds.php';	
+	
+	require '../classes/Advance.php';
+	Advance::updateLevel();
+	
+	require '../sessions/advance-sessions.php';
+	$advance = new LevelUpdateSession();
+	
+	require_once '../views/guilds.php';	

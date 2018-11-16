@@ -3,7 +3,9 @@
 // funkcja pokazująca ilość minerałów w ekwipunku
 // function showing the amount of minerals in the equipment
 
-	function amount($mineral)
+class AmountMinerals{
+
+	public static function getAmount($mineral)
 	{
 		$connect = require "../core/database/connect.php";
 		$userName = $_SESSION['user'];
@@ -15,5 +17,7 @@
 		$amount = $equipmentQuery->fetch();
 		return $amount[$mineral];
 	}
+}	
+	
 
 ?>

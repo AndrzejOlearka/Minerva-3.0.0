@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<!--guilds subpage - main view-->
+<!--zakładka gildie - widok ogólny-->
+
+<!DOCTYPE html>
 <html lang="pl">
 <head>
 
@@ -59,9 +62,14 @@
 			$guildsSession->joinGuildSuccess();
 			$guildsSession->leaveGuildSuccess();
 			$guildsSession->guildsLowLeaderLevel();
-
+			
+			for($i = 1; $i < 11; $i++){
+				$advance->advance($i);
+			}
+			
 			$guilds2 = $guilds->toggleGuild();
 			$guilds1 = $guilds->showGuild();
+			
 			
 			?>
 

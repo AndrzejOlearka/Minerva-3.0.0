@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<!--subpage of guilds subpage - main view-->
+<!--podstrona zakładki Gildie - widok ogólny-->
+
+<!DOCTYPE html>
 <html lang="pl">
 <head>
 

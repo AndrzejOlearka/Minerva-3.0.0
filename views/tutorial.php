@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<!--tutorial subpage - main view-->
+<!--zakładka samouczek - widok ogólny-->
+
+<!DOCTYPE html>
 <html lang="pl">
 <head>
 
@@ -254,7 +257,11 @@
 						<div class="row">
 							<div class="titleTutorial col-12"><h2>Statystyki</h2>
 								<p>
-									W Minervie statystyki są prowadzone w dwóch kategoriach - w pierwszej kluczowe jest posiadanie największego doświadczenia - expa, im więcje go posiadasz tym możesz byc wyżej. Doświadczenie zdobywa się za udział w ekspedycjach, wyprawach oraz za wykonywanie misji. Inaczej wygląda sprawa jeśli chodzi o drugą kategorię - bogactwo, które jest obliczane za pomocą sumy posiadanych monet oraz wartości posiadanych kopalni. Dodatkowo prowadzona jest 3 statystyka, najlepsza gildia, która jest obliczana wedle expa gildii - rośnie on za każdym razem jak gracz należący do gildii wykona ekspedycję, misję, bądź wyprawę.
+									W Minervie statystyki są prowadzone w dwóch kategoriach - w pierwszej kluczowe jest posiadanie największego doświadczenia - expa, 
+									im więcje go posiadasz tym możesz byc wyżej. Doświadczenie zdobywa się za udział w ekspedycjach, wyprawach oraz za wykonywanie misji. 
+									Inaczej wygląda sprawa jeśli chodzi o drugą kategorię - bogactwo, które jest obliczane za pomocą sumy posiadanych monet 
+									oraz wartości posiadanych kopalni. Dodatkowo prowadzona jest 3 statystyka, najlepsza gildia, która jest obliczana wedle expa gildii - rośnie 
+									on za każdym razem jak gracz należący do gildii wykona ekspedycję, misję, bądź wyprawę.
 								</p>
 							</div>
 							<table class='table col-12' id='searchNick'>

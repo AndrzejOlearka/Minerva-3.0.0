@@ -1,8 +1,9 @@
 
-$('.tripDescription').ready(function(){
+$(document).ready(function(){
 $('input[name="wyprawy"]').click(function(){
 	alert("Wyprawa wyruszyła!");
-	var wyprawa= $(this).data("wyprawa");
+	var wyprawa = $(this).data("wyprawa");
+	console.log(wyprawa);
 	$.ajax({
 		url:"../controllers/trips.php",
 		method:"post",

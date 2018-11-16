@@ -5,7 +5,7 @@
 
 	class Advance{
 
-		function updateLevel (){
+		public static function updateLevel (){
 			$query = require '../core/bootstrap.php';
 			$data = $query->select("SELECT * FROM user_data WHERE user = '$userName'");
 
@@ -56,8 +56,5 @@
 			}
 		}
 	}
-
-	$updateLevel = new Advance();
-	$updateLevel->updateLevel();
 
 	?>
