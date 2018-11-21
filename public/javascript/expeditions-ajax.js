@@ -21,7 +21,7 @@ $(document).ready(function(){
 							var diff = date2 - date1;
 							console.log(diff);							
 								var tekst = document.querySelector('#tekst');
-								$('#tekst').addClass('success col-6 offset-3');
+								$('#tekst').addClass('success col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-3');
 								ekspedycja = ['z poszukiwaniem bursztynów', 'z poszukiwaniem agatów', 'z poszukiwaniem malachitów', 'z poszukiwaniem turkusów', 'z poszukiwaniem ametystów', 'z poszukiwaniem topazów', 'z poszukiwaniem szmaragdów', 'z poszukiwaniem rubinów', 'z poszukiwaniem szafirów', 'z poszukiwaniem diamentów','z poszukiwaniem srebra', 'z poszukiwaniem złota'];
 								for(var i = 0; i<12; i++)
 								{

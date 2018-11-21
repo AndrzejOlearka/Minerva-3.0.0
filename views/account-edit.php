@@ -1,4 +1,4 @@
-﻿<!--subpage of account subpage - main view-->
+<!--subpage of account subpage - main view-->
 <!--podstrona zakładki Konto - widok ogólny-->
 
 <!DOCTYPE html>
@@ -58,8 +58,8 @@
 				<div class="row prem">
 					<div class="edit row col-12 col-sm-8 col-lg-6 offset-sm-2 offset-lg-3">
 						<div class="col-12">
-							<form action="account-edit-server.php" method="post" class="row">
-								<div class="error col-12"><p>Czy na pewno chcesz usunąć konto <?= $_SESSION['user']; ?> ?</p></div>
+							<div class="error col-12">Czy na pewno chcesz usunąć konto <?= $_SESSION['user']; ?> ?</div>
+							<form action="../controllers/account-edit.php" method="post" class="row">
 								<input type="submit" name="deleteNick" value="Usuń konto!"  class="col-10 col-sm-6 offset-1 offset-sm-3">
 							</form>
 						</div>

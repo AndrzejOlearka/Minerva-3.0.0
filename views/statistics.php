@@ -43,7 +43,7 @@
 			
 		<div class="row">
 			<div class="search col-4 offset-4">
-				<form action ="statistics.php" method="post">
+				<form action ="../controllers/statistics.php" method="post">
 					<input type="text" id="searchInput" class="col-4" name="nick">
 					<input type="submit"  class="col-4"  value="szukaj!">
 				</form>

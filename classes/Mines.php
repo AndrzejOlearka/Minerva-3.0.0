@@ -35,8 +35,8 @@ class Mines{
 		if($equipmentAndMines['level']<10)
 			{
 				$_SESSION['low_level']=
-					'<br /><div class="error col-10 col-sm-8 offset-1 offset-sm-2">
-						<p>Nie osiągnąłeś wystarczającego poziomu, by móc kupić kopalnię!</p>
+					'<br /><div class="error col-12 col-sm-10 col-lg-8 offset-sm-1 offset-lg-2">
+						Nie osiągnąłeś wystarczającego poziomu, by móc kupić kopalnię!
 					</div><br>';
 				header('Location: ../controllers/mines.php');
 				exit();
@@ -45,8 +45,8 @@ class Mines{
 			if($equipmentAndMines['coins']<$value)
 			{
 				$_SESSION['low_coins']=
-					'<br /><div class="error col-10 col-sm-8 offset-1 offset-sm-2">
-						<p>Nie masz wystarczająco monet by zakupić kopalnię!</p>
+					'<br /><div class="error col-12 col-sm-10 col-lg-8 offset-sm-1 offset-lg-2">
+						Nie masz wystarczająco monet by zakupić kopalnię!
 					</div><br>';
 				header('Location: ../controllers/mines.php');
 				exit();
@@ -55,8 +55,8 @@ class Mines{
 				if($equipmentAndMines['gold']<$gold)
 				{
 					$_SESSION['low_gold']=
-						'<br /><div class="error col-10 col-sm-8 offset-1 offset-sm-2">
-							<p>Nie masz wystarczająco zlota by zakupić kopalnię!</p>
+						'<br /><div class="error col-12 col-sm-10 col-lg-8 offset-sm-1 offset-lg-2">
+							Nie masz wystarczająco zlota by zakupić kopalnię!
 						</div><br>';
 					header('Location: ../controllers/mines.php');
 					exit();
@@ -64,8 +64,8 @@ class Mines{
 				else{
 					if($equipmentAndMines['silver']<$silver)	{
 						$_SESSION['low_silver']=
-							'<br /><div class="error col-10 col-sm-8 offset-1 offset-sm-2">
-								<p>Nie masz wystarczająco srebra by zakupić kopalnię!</p>
+							'<br /><div class="error col-12 col-sm-10 col-lg-8 offset-sm-1 offset-lg-2">
+								Nie masz wystarczająco srebra by zakupić kopalnię!
 							</div><br>';
 						header('Location: ../controllers/mines.php');
 						exit();
@@ -85,7 +85,7 @@ class Mines{
 							if($newMineAmount>=5){$mineName = "kopalni ";}else{$mineName = "kopalnie ";}
 
 							$_SESSION['buy_mines_completed']=
-								"<div class='success col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3'>
+								"<div class='success col-12 col-sm-10 col-lg-8 offset-sm-1 offset-lg-2'>
 									Udało ci się zakupić nową kopalnię ".$mineralsSession[$nr]."!<br />
 									Posiadasz teraz ".$newMineAmount." ".$mineName.$mineralsSession[$nr]."
 								</div><br>";
@@ -131,9 +131,9 @@ class Mines{
 			$query->update("UPDATE basic_equipment SET $mineral = $newMineralAmount WHERE user = '$userName'");
 
 			$_SESSION["daily_Prize$nr"] = "$fullDailyPrize $mineralsSession[$nr]"." ";
-
+			$_SESSION['daily_Prize_Info'] = true;
 			$query->update("UPDATE mines_data SET daily_prize = now() + INTERVAL 1 DAY WHERE user = '$userName'");
-
+			
 		}
 	}
 }

@@ -57,9 +57,7 @@ class Stats{
 			$indenticalNicks  = $query->rows("SELECT user FROM user_data WHERE user ='$nick'");
 			if ($indenticalNicks==0)
 			{
-				$_SESSION['no_nick_error']="<br /><div class='error col-6 offset-3'><p>Nie znaleziono gracza o podanym nicku!</p></div>";
-				header('Location: statistics.php');			
-				exit();
+				$_SESSION['no_nick_error']="<br /><div class='error col-6 offset-3'>Nie znaleziono gracza o podanym nicku!</div>";
 			}
 			else{
 			$data = $query->select("SELECT user, exp, coins FROM user_data WHERE user = '$nick'");				

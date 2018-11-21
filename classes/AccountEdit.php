@@ -64,7 +64,7 @@ class AccountEdit{
 			session_unset();
 			session_start();
 			$_SESSION['deleted_account'] = '<div class="error col-10 col-lg-6 offset-1 offset-lg-3">
-				<p>Usunąłeś konto '.$nick.'.</p></div>';
+				Usunąłeś konto '.$nick.'.</div>';
 			header ('Location: ../index.php');
 			exit();
 		}

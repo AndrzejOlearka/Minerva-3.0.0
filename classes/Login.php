@@ -31,20 +31,20 @@ class Login{
 					exit();
 				}			
 				else{
-					$_SESSION['e_form_login']='<div class="error col-12"><p>Nieprawidłowy login lub hasło!</p></div>';
+					$_SESSION['e_form_login']='<div class="error col-12">Nieprawidłowy login lub hasło!</div>';
 					header('Location: login.php');
 					exit();
 				
 				} 
 			}	
 			else{	
-				$_SESSION['e_form_login']='<div class="error col-12"><p>Nieprawidłowy login lub hasło!</p></div>';	
+				$_SESSION['e_form_login']='<div class="error col-12">Nieprawidłowy login lub hasło!</div>';	
 				header('Location: login.php');
 				exit();
 			}
 		}		
 		else{
-				$_SESSION['e_form_log_inputs'] = '<div class="error col-12"><p>Nie wypełniłeś wszystkich pól formularza logowania!</p></div><br /><br />';
+				$_SESSION['e_form_log_inputs'] = '<div class="error col-12">Nie wypełniłeś wszystkich pól formularza logowania!></div><br /><br />';
 				header ('Location: login.php');
 				exit();
 		}		

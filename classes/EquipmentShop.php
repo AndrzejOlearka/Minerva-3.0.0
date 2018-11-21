@@ -29,8 +29,8 @@ class EquipmentShop{
 		$coin = $coins[$nr];
 
 		if (is_numeric($_POST["insert$nr"]) == false){
-			$_SESSION['e_no_int'] ='<br /><div class="error col-8 offset-2">
-				<p>Nie możesz sprzedać litery... co nie? Wpisz liczby!</p></div>';
+			$_SESSION['e_no_int'] ='<br /><div class="error col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-3">
+				Nie możesz sprzedać litery... co nie? Wpisz liczby!</div>';
 			header('Location: ../controllers/equipment.php');
 			exit();
 		}
@@ -38,16 +38,16 @@ class EquipmentShop{
 		{
 			$s[$mineral] = $_POST["insert$nr"];
 			if ($_POST["insert$nr"] > $equipment[$mineral]){
-				$_SESSION['e_wrong_amount']='<br /><div class="error col-8 offset-2">
-					<p>Nie posiadasz tyle kamieni!</p></div>';
+				$_SESSION['e_wrong_amount']='<br /><div class="error col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-3">
+					Nie posiadasz tyle kamieni!</div>';
 			header('Location: ../controllers/equipment.php');
 			exit();
 			}
 			else{
 
 				if(($_POST["insert$nr"]) == 0){
-					$_SESSION['e_zero_input'] ='<br /><div class="error col-8 offset-2">
-						<p>Nie możesz sprzedać zera!</p></div>';
+					$_SESSION['e_zero_input'] ='<br /><div class="error col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-3">
+						Nie możesz sprzedać zera!</div>';
 				header('Location: ../controllers/equipment.php');
 				exit();
 				}
@@ -63,7 +63,7 @@ class EquipmentShop{
 					$_SESSION["value"] = $_POST["insert$nr"];
 					$_SESSION["coins"] = $coin1;
 					$_SESSION["minerals$mineral"] = $mineralSession;
-					unset($_POST);
+					unset($_POST["insert$nr"]);
 				}
 			}
 		}

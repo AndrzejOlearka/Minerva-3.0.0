@@ -8,7 +8,9 @@
 		$guilds = new Guild;
 		$guilds3 = $guilds->editGuild();
 	}
-	
+	require '../core/FormSending.php';
+	FormSending::preventSendingData();
+
 	require '../sessions/guilds-sessions.php';
 	$guildsSession = new GuildSessions();
 

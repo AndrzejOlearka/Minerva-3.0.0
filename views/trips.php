@@ -53,7 +53,6 @@
 
 <?php	
 
-echo $advance;
 
 if(isset($postRefreshAjax)){
 	echo $postRefreshAjax;
@@ -68,10 +67,6 @@ if(isset($tripPrizeInfo)){
 }
 
 $tripSession->tripsErrorStoppedTrip();
-
-for($i = 1; $i < 11; $i++){
-	$advance->advance($i);
-}
 
 ?>			
 		

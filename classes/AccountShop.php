@@ -8,7 +8,6 @@
 			public function getPremium($premium){
 				
 				$query = require '../core/bootstrap.php';	
-				$premium = $_POST['premium'];
 				$premiumEnd = $query->select("SELECT premium_end, user FROM user_data WHERE user = '$userName'");
 
 				$dateTime = new DateTime();
@@ -45,7 +44,6 @@
 	
 		public function getCoins($coins){
 			
-			$coins = $_POST['coins'];
 			$query = require '../core/bootstrap.php';
 			
 			if($coins == 1){

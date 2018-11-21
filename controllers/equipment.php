@@ -12,6 +12,9 @@ require '../classes/EquipmentShop.php';
 			$soldMinerals->sell($nr);
 		}
 	}
+	
+require '../core/FormSending.php';
+FormSending::preventSendingData();
 
 require_once '../sessions/equipment-sessions.php';
 $equipmentSession = new EquipmentSessions();

@@ -23,13 +23,13 @@
 
 				if($data['level']<$requiredLevel){
 					$_SESSION['e_low_level']='<div class="error col-10 col-sm-8 offset-1 offset-sm-2">
-						<p>Nie osiągnąłeś odpowiedniego levela by móc wykonać tą ekspedycję!</p></div>';
+						Nie osiągnąłeś odpowiedniego levela by móc wykonać tą ekspedycję!</div>';
 					header('Location: '.$_SERVER['PHP_SELF']);
 					exit();
 				}
 				if($data['coins']<=$requiredCoins){
 					$_SESSION['e_low_coins']='<div class="error col-10 col-sm-8 offset-1 offset-sm-2">
-						<p>Nie masz wystarczająco monet by rozpocząć zadanie!</p></div>';
+						Nie masz wystarczająco monet by rozpocząć zadanie!</div>';
 					header('Location: '.$_SERVER['PHP_SELF']);
 					exit();
 				}

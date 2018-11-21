@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="../public/style/style.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Milonga" > 
 	<link rel="stylesheet" href="../public/social_icons_fontello/fontello.css"/>	
+	<link rel="Shortcut icon" href="../public/img/title-icon.png" />
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
 	<script src="../public/javascript/audio.js"></script>

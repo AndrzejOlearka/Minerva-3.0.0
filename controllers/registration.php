@@ -7,7 +7,7 @@ if (isset($_POST['nick']) && ($_POST['password']) && ($_POST['password2']) && ($
 	Registration::register();	
 }
 
-require_once '../sessions/registration-sessions.php';
+require '../sessions/registration-sessions.php';
 $registrationFormSession = new RegistrationSessions();
 
-require '../views/registration.php';
+require_once '../views/registration.php';

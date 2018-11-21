@@ -38,8 +38,8 @@ class Missions{
 				$mineralsSession = ['diament', 'rubiny', 'agaty', 'szafiry', 'szmaragdy', 'topazy', 'turkusów', 'ametysty', 'malachity'];
 			}
 			$_SESSION['e_mission_amount_first'] =
-				"<div class='error col-6 offset-3'>
-					<p>Niestety nie możesz wykonać misji,brakuje ci ".$requiredAmount." ".$mineralsSession[$nr].",</p>
+				"<div class='error col-12 col-sm-10 col-lg-8 offset-sm-1 offset-lg-2'>
+					Niestety nie możesz wykonać misji, brakuje ci ".$requiredAmount." ".$mineralsSession[$nr].",
 				</div><br /><br />";
 
 				if($newMineralAmount2 < 0){
@@ -50,9 +50,9 @@ class Missions{
 					}
 					unset($_SESSION['e_mission_amount_first']);
 					$_SESSION['e_mission_amount_second'] =
-						"<div class='error col-6 offset-3'>
-							<p>Niestety nie możesz wykonać misji,	brakuje ci ".$requiredAmount." ".$mineralsSession[$nr]."
-								 oraz ".$requiredAmount2." ".$minerals2Session[$nr].".</p>
+						"<div class='error col-12 col-sm-10 col-lg-8 offset-sm-1 offset-lg-2'>
+							Niestety nie możesz wykonać misji, brakuje ci ".$requiredAmount." ".$mineralsSession[$nr]."
+								 oraz ".$requiredAmount2." ".$minerals2Session[$nr].".
 						</div><br /><br />";
 					header('Location: ../controllers/missions.php');
 					exit();
@@ -69,8 +69,10 @@ class Missions{
 				$minerals2Session = ['kryształy', 'morganity', 'perły', 'fluoryty', 'akwamaryny', 'cymofany', 'opale', 'painity', 'jadeity'];
 			}
 			$_SESSION['e_mission_amount_second'] =
-				"<div class='error col-6 offset-3'><p>Niestety nie możesz wykonać misji,
-				brakuje ci ".$requiredAmount2." ".$minerals2Session[$nr].".</p></div><br /><br />";
+				"<div class='error col-12 col-sm-10 col-lg-8 offset-sm-1 offset-lg-2'>
+					Niestety nie możesz wykonać misji, 
+					brakuje ci ".$requiredAmount2." ".$minerals2Session[$nr].".
+				</div><br /><br />";
 			header('Location: ../controllers/missions.php');
 			exit();
 		}

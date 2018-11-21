@@ -92,7 +92,7 @@ main header h1, main h1{
 	text-shadow: 3px 3px 3px #335699;
 }
 
-.error p{
+.error{
 	font-size: 20px;
 	background-color: #663366;
 	border: 7px solid #335699;

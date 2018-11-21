@@ -18,7 +18,7 @@
 			'z poszukiwaniem akwamarynów', 'z poszukiwaniem opali', 'z poszukiwaniem pereł', 'z poszukiwaniem cymofanów'];
 			$_SESSION['trip_stopped'] = 
 				'<div class="error col-10 col-sm-8 offset-1 offset-sm-2">
-					<p>Przerwałeś zadanie '.$minerals[$tripNumber].', wyrusz ponownie na wyprawę, ona nic nie kosztuje!</p>
+					Przerwałeś zadanie '.$minerals[$tripNumber].', wyrusz ponownie na wyprawę, ona nic nie kosztuje!
 				</div>';
 			$query->update("UPDATE trips_data SET trip_prize = false WHERE user = '$userName'");
 			unset($_SESSION['only_exp']);

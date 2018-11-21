@@ -21,8 +21,8 @@
 				'bursztynów', 'agatów', 'malachitów', 'turkusów', 'ametystów', 'topazów',
 				'szmaragdów', 'rubinów', 'szafirów', 'diamentów', 'zlota', 'srebra'
 			];
-			$_SESSION['expedition_stopped'] = '<div class="error col-10 col-sm-8 offset-1 offset-sm-2">
-				<p>Przerwałeś zadanie z poszukiwaniem '.$minerals[$expeditionNumber].' , odzyskałeś '.$coinsRefund[$i].' monety, wyrusz ponownie na ekspedycję!</p></div>';
+			$_SESSION['expedition_stopped'] = '<div class="error col-12 col-sm-10 col-lg-8 offset-sm-1 offset-lg-2">
+				Przerwałeś zadanie z poszukiwaniem '.$minerals[$expeditionNumber].' , odzyskałeś '.$coinsRefund[$i].' monety, wyrusz ponownie na ekspedycję!</div>';
 			$query->update("UPDATE expeditions_data SET expedition_prize = false WHERE user = '$userName'");
 			header('Location: ../controllers/expeditions.php');
 			exit();

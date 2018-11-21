@@ -42,7 +42,6 @@
 
 		<?php
 
-		echo $advance;
 		$accountSession->accNickChangedSuccess();
 		$accountSession->accNickErrorLength();
 		$accountSession->accNickErrorSigns();
@@ -62,9 +61,9 @@
 				<div class="data col-4 col-lg-3"><h2>Exp</h2></div>
 				<div class="data col-4 col-lg-3"><h2>Monety</h2></div>
 				<div class="w-100"></div>
-				<div class="data col-4 col-lg-2 offset-lg-2"><p><?=$data['level']?></p></div>
-				<div class="data col-4 col-lg-3"><p><?=$data['exp']?></p></div>
-				<div class="data col-4 col-lg-3"><p><?=$data['coins']?></p></div>
+				<div class="data col-4 col-lg-2 offset-lg-2"><p><?=DataUser::check('level')?></p></div>
+				<div class="data col-4 col-lg-3"><p><?=DataUser::check('exp')]?></p></div>
+				<div class="data col-4 col-lg-3"><p><?=DataUser::check('coins')?></p></div>
 			</div>
 
 			<br /><h2>Zobacz ile zostało ci premium oraz przedłuż je!</h2>
@@ -79,7 +78,7 @@
 						<div class="data col-6 col-sm-4 col-lg-2 offset-sm-0 offset-lg-3"><p>3 dni</p></div>
 						<div class="data col-6 col-sm-4 col-lg-2"><p>9,99 zł</p></div>
 						<div class="data col-6 col-sm-4 col-lg-2 offset-3 offset-sm-0">
-							<p><input type="button" class ="buttonPremium col-3" onclick="play();" name="premium"  data-premium="1" value="Zakup!"></p>
+							<p><input type="button" class ="buttonPremium col-3" name="premium"  data-premium="1" value="Zakup!"></p>
 						</div>
 					</div>
 
@@ -87,7 +86,7 @@
 						<div class="data col-6 col-sm-4 col-lg-2 offset-sm-0 offset-lg-3"><p>7 dni</p></div>
 						<div class="data col-6 col-sm-4 col-lg-2"><p>18,99 zł</p></div>
 						<div class="data col-8 col-sm-4 col-lg-2 offset-2 offset-sm-0">
-							<p><input type="button" class ="buttonPremium col-3" onclick="play();" name="premium"  data-premium="2" value="Zakup!"></p>
+							<p><input type="button" class ="buttonPremium col-3" name="premium"  data-premium="2" value="Zakup!"></p>
 						</div>
 					</div>
 
@@ -95,7 +94,7 @@
 						<div class="data col-6 col-sm-4 col-lg-2 offset-sm-0 offset-lg-3"><p>14 dni</p></div>
 						<div class="data col-6 col-sm-4 col-lg-2"><p>29,99 zł</p></div>
 						<div class="data col-8 col-sm-4 col-lg-2 offset-2 offset-sm-0">
-							<p><input type="button" class ="buttonPremium col-3" onclick="play();" name="premium"  data-premium="3" value="Zakup!"></p>
+							<p><input type="button" class ="buttonPremium col-3" name="premium"  data-premium="3" value="Zakup!"></p>
 						</div>
 					</div>
 				</div>
@@ -105,7 +104,7 @@
 
 				<div class="row prem">
 					<div class="data col-12 col-sm-10 col-lg-8 offset-sm-1 offset-lg-2">
-						<h2 id="coinsEdit">Posiadasz w tej chwili <?=$data['coins']?> monet, <span style='color: gold'>Wykup ich więcej!</span></h2>
+						<h2 id="coinsEdit">Posiadasz w tej chwili <?=DataUser::check('coins')?> monet, <span style='color: gold'>Wykup ich więcej!</span></h2>
 					</div>
 				</div>
 
@@ -116,7 +115,7 @@
 						<div class="data col-6 col-sm-4 col-lg-2 offset-sm-0 offset-lg-3">
 							<p>100 monet</p></div><div class="data col-6 col-sm-4 col-lg-2"><p>9,99 zł</p></div>
 							<div class="data col-6 col-sm-4 col-lg-2 offset-3 offset-sm-0">
-								<p><input type="button" class ="buttonPremium col-3" onclick="play();" name="coins"  data-coins = "1" value="Zakup!"></p>
+								<p><input type="button" class ="buttonPremium col-3" name="coins"  data-coins = "1" value="Zakup!"></p>
 							</div>
 					</div>
 
@@ -124,7 +123,7 @@
 						<div class="data col-6 col-sm-4 col-lg-2 offset-sm-0 offset-lg-3">
 							<p>250 monet</p></div><div class="data col-6 col-sm-4 col-lg-2"><p>18,99 zł</p></div>
 							<div class="data col-6 col-sm-4 col-lg-2 offset-3 offset-sm-0">
-								<p><input type="button" class ="buttonPremium col-3" onclick="play();" name="coins"  data-coins = "2" value="Zakup!"></p>
+								<p><input type="button" class ="buttonPremium col-3" name="coins"  data-coins = "2" value="Zakup!"></p>
 							</div>
 					</div>
 
@@ -132,7 +131,7 @@
 						<div class="data col-6 col-sm-4 col-lg-2 offset-sm-0 offset-lg-3">
 							<p>500 monet</p></div><div class="data col-6 col-sm-4 col-lg-2"><p>29,99 zł</p></div>
 							<div class="data col-6 col-sm-4 col-lg-2 offset-3 offset-sm-0">
-								<p><input type="button" class ="buttonPremium col-3" onclick="play();" name="coins"  data-coins = "3" value="Zakup!"></p>
+								<p><input type="button" class ="buttonPremium col-3" name="coins"  data-coins = "3" value="Zakup!"></p>
 							</div>
 					</div>
 				</div>

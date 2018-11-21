@@ -24,7 +24,7 @@
 								}, 1000);
 							var reload = setInterval(function(){
 								location.reload(); 
-								}, 5000);
+								}, 3000);
 							}
 						});
 					});
@@ -48,7 +48,7 @@
 								}, 1000);
 							var reload = setInterval(function(){
 								location.reload(); 
-								}, 5000);
+								}, 3000);
 							}
 						});
 					});

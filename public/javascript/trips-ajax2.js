@@ -23,7 +23,7 @@ $(document).ready(function(){
 						console.log(diff);
 						
 						var tekst = document.querySelector('#tekst');
-						$('#tekst').addClass('success col-6 offset-3');
+						$('#tekst').addClass('success col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-3');
 						ekspedycja = ['z poszukiwaniem jadeitów', 'z poszukiwaniem kryształów', 'z poszukiwaniem painitów', 'z poszukiwaniem fluorytów', 'z poszukiwaniem morganitów', 'z poszukiwaniem akwamarynów', 'z poszukiwaniem opali', 'z poszukiwaniem pereł', 'z poszukiwaniem cymofanów'];
 						for(var i = 0; i<12; i++)
 						{

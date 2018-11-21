@@ -19,7 +19,7 @@
 			
 			if(isset($_SESSION['only_exp']))
 			{
-				$newExp= 20000+$data['exp'];
+				$newExp= 200+$data['exp'];
 				$query->update("UPDATE user_data SET exp = '$newExp' WHERE user = '$userName'");
 				unset($_SESSION['only_exp']);
 				$tripPrizeInfo = "<br /><div class='success col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3'>Zadanie z poszukiwaniem ".$mineralsSession[$tripNumber]." zostało zakończone! <br />
@@ -27,7 +27,7 @@
 				Otrzymałeś 20000 punktów doświadczenia</div><br />";		
 			}	
 			else if(isset($_SESSION['only_coins'])){
-				$newExp= 40000+$data['exp'];
+				$newExp= 400+$data['exp'];
 				$query->update("UPDATE user_data SET exp = '$newExp' WHERE user = '$userName'");
 
 				// jeśli ktoś ma premium to 50%+
@@ -47,7 +47,7 @@
 					
 			}	
 			else if(isset($_SESSION['main_minerals'])){
-				$newExp= 100000+$data['exp'];
+				$newExp= 800+$data['exp'];
 				$query->update("UPDATE user_data SET exp = '$newExp' WHERE user = '$userName'");
 				
 				// jeśli ktoś ma premium to 50%+
