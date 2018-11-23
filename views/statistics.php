@@ -42,9 +42,9 @@
 			<h2>A może chcesz poszukać jakiegoś gracza?</h2>
 			
 		<div class="row">
-			<div class="search col-4 offset-4">
+			<div class="search col-12 col-sm-8 col-lg-4 offset-sm-2 offset-lg-4">
 				<form action ="../controllers/statistics.php" method="post">
-					<input type="text" id="searchInput" class="col-4" name="nick">
+					<input type="text" id="searchInput" class="col-10 offset-1" name="nick">
 					<input type="submit"  class="col-4"  value="szukaj!">
 				</form>
 			</div>	
@@ -68,7 +68,7 @@ $statisticsSession->searchUserError();
 $statistics->statsExp();
 ?>
 
-		<br /><h2> Najbardziej bogaci gracze:</h2><br />
+		<br /><h2> Najbogatsi gracze:</h2><br />
 		
 <?php
 $statistics->statsCoins();	

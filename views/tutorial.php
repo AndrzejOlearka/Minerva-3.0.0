@@ -62,8 +62,9 @@
 				<div class="row description" id="equipment1">
 					<div class="tutorial col-lg-8 offset-lg-2">
 						<div class="row">
-							<img class="photoTutorial col-3" src="../public/img/ekspedycja1.jpeg">
-							<div class="titleTutorial col-9"><h2>Ekwipunek</h2>
+							<h2 class="col-12 mb-4">Ekwipunek</h2>
+							<div class="photoTutorial col-12 col-md-4 mb-4"><img src="../public/img/ekspedycja1.jpeg"></div>
+							<div class="titleTutorial col-12 col-md-8">
 								<p>
 									W tej zakładce możesz prześledzić stan swoich minerałów, zarówno tych powszechnie wystepujących i legendarnych. 
 									Dodatkowo możesz sprawdzić ile kosztują i sprzedać je, by uzyskać monety! W grze występuje 12 powszechnych minerałów, 
@@ -78,8 +79,9 @@
 				<div class="row description" id="expeditions1">
 					<div class="tutorial col-lg-8 offset-lg-2">
 						<div class="row">
-							<img class="photoTutorial col-3" src="../public/img/ekspedycja8.jpg">
-							<div class="titleTutorial col-9"><h2>Ekspedycje</h2>
+							<h2 class="col-12 mb-4">Ekspedycje</h2>
+							<div class="photoTutorial col-12 col-md-4 mb-4"><img src="../public/img/ekspedycja8.jpg"></div>
+							<div class="titleTutorial col-12 col-md-8">
 								<p>
 									Dzięki ekspedycjom możesz zdobywać powszechne minerały, każa z nich trwa określoną ilość czasu. Im droższy minerał - 
 									tym więcej trzeba czasu przeczekać na nagrodę. Dla przykładu na bursztyny należy czekać jedynie 1 minutę, zaś na 
@@ -94,8 +96,9 @@
 				<div class="row description" id="mains1">
 					<div class="tutorial col-lg-8 offset-lg-2">
 						<div class="row" >
-							<img class="photoTutorial col-3" src="../public/img/kopbursztyny.jpg">
-							<div class="titleTutorial col-9"><h2>Kopalnie</h2>
+							<h2 class="col-12 mb-4">Kopalnie</h2>
+							<div class="photoTutorial col-12 col-md-4 mb-4"><img src="../public/img/kopbursztyny.jpg"></div>
+							<div class="titleTutorial col-12 col-md-8">
 								<p>
 									W grze dostępnych jest 12 kopalni - dają one losową ilość minerałów za każdą jedną kopalnię. 
 									Wydostać z nich można jedynie minerały powszechne. Żeby kupić daną kopalnię, należy mieć 10 - maksymalny level, 
@@ -111,8 +114,9 @@
 			<div class="row description" id="missions1">
 				<div class="tutorial col-lg-8 offset-lg-2">
 					<div class="row" >
-						<img class="photoTutorial col-3" src="../public/img/misja4.jpg">
-						<div class="titleTutorial col-9"><h2>Misje</h2>
+							<h2 class="col-12 mb-4">Misje</h2>
+							<div class="photoTutorial col-12 col-md-4 mb-4"><img src="../public/img/misja4.jpg"></div>
+							<div class="titleTutorial col-12 col-md-8">
 							<p>
 								Misji dostępnych w grze jest 9, tyle samo co legendarnych minerałów. Żeby wykonać je trzeba posiadać 
 								określoną liczbę powszechnych minerałów oraz jeden z legendarnych minerałów. Misje dodają jedynie expa, 
@@ -127,8 +131,9 @@
 			<div class="row description" id="trips1">
 				<div class="tutorial col-lg-8 offset-lg-2">
 					<div class="row" >
-						<img class="photoTutorial col-3" src="../public/img/misja8.jpg">
-						<div class="titleTutorial col-9"><h2>Wyprawy</h2>
+							<h2 class="col-12 mb-4">Wyprawy</h2>
+							<div class="photoTutorial col-12 col-md-4 mb-4"><img src="../public/img/misja8.jpg"></div>
+							<div class="titleTutorial col-12 col-md-8">
 							<p>
 								Wypraw w grze jest 9, czyli tyle samo ile legendarnych minerałów. Kazda wyprawa może skończyć się na 3 sposoby - 
 								albo otrzymasz wyłącznie exp, albo exp i monety, albo exp i legendarne minerały. Szansa na zdobycie legendarnego minerału 
@@ -142,8 +147,9 @@
 			<div class="row description" id="guilds1">
 				<div class="tutorial col-lg-8 offset-lg-2">
 					<div class="row" >
-						<img class="photoTutorial col-3" src="../public/img/misja2.jpg">
-						<div class="titleTutorial col-9"><h2>Gildie</h2>
+							<h2 class="col-12 mb-4">Gildie</h2>
+							<div class="photoTutorial col-12 col-md-4 mb-4"><img src="../public/img/misja2.jpg"></div>
+							<div class="titleTutorial col-12 col-md-8">
 							<p>
 								Gildie może założyć każdy kto posiada 10 level i może wydać 1000 monet. W każdej z gildii możesz liderować 20 członkom. 
 								Każda gildia posiada swój avatar. W gildii zbiera się doświadczenie, obliczane za każdą zdobytą monetę i kopalnię. 
@@ -158,8 +164,9 @@
 			<div class="row description" id="account1">
 				<div class="tutorial col-lg-8 offset-lg-2">
 					<div class="row">
-						<img class="photoTutorial col-3" src="../public/img/ekspedycja6.jpg">
-						<div class="titleTutorial col-9"><h2>Konto</h2>
+							<h2 class="col-12 mb-4">Konto</h2>
+							<div class="photoTutorial col-12 col-md-4 mb-4"><img src="../public/img/misja3.jpg"></div>
+							<div class="titleTutorial col-12 col-md-8">
 							<p>
 								W tej zakładce możesz zobaczyć swój level, monety, exp oraz status swojego premium. 
 								Dodatkowo możesz zwiększyć ilość dni premium o 3, 7 lub 14 dni, a także powiększyć ilość monet o 100,250 lub 500. 

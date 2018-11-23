@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 // obiekt pozwalający na zakup premium lub monet
 // object allowing for the purchase of premium or coins

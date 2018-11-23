@@ -1,4 +1,4 @@
-﻿	$('span[style="color: blue"]').click(function(){
+	$('span[style="color: blue"]').click(function(){
 		$('#premium').show();
 	});
 	

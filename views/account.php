@@ -61,15 +61,15 @@
 				<div class="data col-4 col-lg-3"><h2>Exp</h2></div>
 				<div class="data col-4 col-lg-3"><h2>Monety</h2></div>
 				<div class="w-100"></div>
-				<div class="data col-4 col-lg-2 offset-lg-2"><p><?=DataUser::check('level')?></p></div>
-				<div class="data col-4 col-lg-3"><p><?=DataUser::check('exp')]?></p></div>
-				<div class="data col-4 col-lg-3"><p><?=DataUser::check('coins')?></p></div>
+				<div class="data col-4 col-lg-2 offset-lg-2"><p><?=DataUser::check('level');?></p></div>
+				<div class="data col-4 col-lg-3"><p><?=DataUser::check('exp');?></p></div>
+				<div class="data col-4 col-lg-3"><p><?=DataUser::check('coins');?></p></div>
 			</div>
 
 			<br /><h2>Zobacz ile zostało ci premium oraz przedłuż je!</h2>
 
 			<div class="row prem">
-				<div class="data col-12 col-sm-10 col-lg-8 offset-sm-1 offset-lg-2"  ><h2 id="premiumEdit"><?=$premiumTime;?></h2></div>
+				<div class="data col-12 col-sm-10 col-lg-8 offset-sm-1 offset-lg-2"><h2 id="premiumEdit"><?=$premiumTime;?></h2></div>
 			</div>
 			<br />
 
@@ -104,7 +104,7 @@
 
 				<div class="row prem">
 					<div class="data col-12 col-sm-10 col-lg-8 offset-sm-1 offset-lg-2">
-						<h2 id="coinsEdit">Posiadasz w tej chwili <?=DataUser::check('coins')?> monet, <span style='color: gold'>Wykup ich więcej!</span></h2>
+						<h2 id="coinsEdit">Posiadasz w tej chwili <?=DataUser::check('coins');?> monet, <span style='color: gold'>Wykup ich więcej!</span></h2>
 					</div>
 				</div>
 
@@ -142,7 +142,7 @@
 
 				<div class="row prem">
 					<div class="edit row col-12 col-sm-8 col-lg-6 offset-sm-2 offset-lg-3">
-						<div class="col-12"><form action="account-edit.php" method="post" class="row">
+						<div class="col-12"><form action="../controllers/account-edit.php" method="post" class="row">
 							<input type="submit" name="editName" value="Zmień nick!"  class="col-10 col-sm-6 offset-1 offset-sm-3"></form>
 						</div>
 					</div>
@@ -155,7 +155,7 @@
 				<div class="row prem">
 					<div class="edit row col-12 col-sm-8 col-lg-6 offset-sm-2 offset-lg-3">
 						<div class="col-12">
-							<form action="account-edit.php" method="post" class="row">
+							<form action="../controllers/account-edit.php" method="post" class="row">
 								<input type="submit" name="deleteAccount" value="Usuń konto!" class="col-10 col-sm-6 offset-1 offset-sm-3">
 							</form>
 						</div>

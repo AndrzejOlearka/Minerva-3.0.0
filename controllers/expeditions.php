@@ -61,8 +61,8 @@
 	require '../sessions/advance-sessions.php';
 	$advance = new LevelUpdateSession();
 	
-	require '../classes/DataUser.php';
-	require '../classes/ExpeditionRequiredCoins.php';
+	include '../classes/DataUser.php';
+	include '../classes/ExpeditionRequiredCoins.php';
 	
 	require_once '../views/expeditions.php';	
 	

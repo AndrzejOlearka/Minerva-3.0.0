@@ -19,11 +19,15 @@
 }
 
 
-.photoTutorial {
+.photoTutorial img {
 	width: 100%;
-	max-height: 120%;
 	border: 7px solid #336699;
-	padding:0px;
+	min-height: 200px;
+	margin-right:10px;
+}
+
+.photoTutorial{
+	vertical-align:middle;
 }
 
 .tutorial h2{

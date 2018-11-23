@@ -242,7 +242,7 @@
 			if(!$guildAvatar){
 				$guildAvatar = "guild-avatar.JPG";
 			}
-			$target = "../public/img/guild-avatars".basename($guildAvatar);
+			$target = "../public/img/guild-avatars/".basename($guildAvatar);
 
 			if (move_uploaded_file($_FILES['guildAvatar']['tmp_name'], $target)) {
 				echo "File is valid, and was successfully uploaded.\n";

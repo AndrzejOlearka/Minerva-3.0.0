@@ -10,7 +10,7 @@ class Stats{
 		$stats = $query->selectAll("SELECT user, exp FROM user_data ORDER BY `user_data`.`exp` DESC limit 10");
 		$i = 1;
 		foreach($stats as $statsTable){		
-			echo "<table class='table col-8 offset-2'>
+			echo "<table class='table col-11 col-sm-10 col-md-6 offset-1 offset-md-3'>
 				<tr>
 					<td class='col-3'>{$i}</td>
 					<td class='col-6'>{$statsTable['user']}</td>
@@ -25,7 +25,7 @@ class Stats{
 		$stats = $query->selectAll("SELECT user, coins FROM user_data ORDER BY `user_data`.`coins` DESC limit 10");
 		$i = 1;
 		foreach($stats as $statsTable){			
-			echo "<table class='table col-8 offset-2''>
+			echo "<table class='table col-11 col-sm-10 col-md-6 offset-1 offset-md-3'>
 				<tr>
 					<td class='col-3'>{$i}</td>
 					<td class='col-6'>{$statsTable['user']}</td>
@@ -40,7 +40,7 @@ class Stats{
 		$stats = $query->selectAll("SELECT guild_name, guild_exp FROM guilds_data ORDER BY `guilds_data`.`guild_exp` DESC limit 10");
 		$i = 1;
 		foreach($stats as $statsTable){			
-			echo "<table class='table col-8 offset-2''>
+			echo "<table class='table col-11 col-sm-10 col-md-6 offset-1 offset-md-3'>
 				<tr>
 					<td class='col-3'>{$i}</td>
 					<td class='col-6'>{$statsTable['guild_name']}</td>

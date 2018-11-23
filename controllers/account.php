@@ -26,9 +26,6 @@
 	require '../sessions/advance-sessions.php';
 	$advance = new LevelUpdateSession();
 	
-	$query = require '../core/bootstrap.php';
-	$data = $query->select("SELECT * FROM user_data WHERE user = '$userName'");
-	
 	require '../classes/DataUser.php';
 
 	require_once '../views/account.php';	
