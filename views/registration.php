@@ -38,25 +38,26 @@
 				<form action="../controllers/registration.php" method="post" class="row form_registration col-10 col-sm-10 col-lg-6 offset-1 offset-sm-1 offset-lg-3 mb-5">
 
 					<div class="form_registration_title col-sm-6 col-lg-4 offset-lg-1">Nickname:</div>
-					<div class="form_registration_input col-sm-6 col-lg-6"><input type="text" name="nick"/></div>
+					<div class="form_registration_input col-sm-6 col-lg-6"><input type="text" name="nick" value="<?php $registrationFormSession->regNickSession();?>"></div>
 					<?php $registrationFormSession->regNickLength();?> 
 					<?php $registrationFormSession->regNickSigns();?>
+					<?php $registrationFormSession->regNickExist();?>
 
 					<div class="form_registration_title col-sm-6 col-lg-4 offset-lg-1">E-mail:</div>
-					<div class="form_registration_input col-sm-6 col-lg-6"><input type="email" name="email"/></div>
+					<div class="form_registration_input col-sm-6 col-lg-6"><input type="email" name="email" value="<?php $registrationFormSession->regEmailSession();?>"></div>
 					<?php $registrationFormSession->regEmailValid();?>
 					<?php $registrationFormSession->regEmailExist();?>
 
 					<div class="form_registration_title col-sm-6 col-lg-4 offset-lg-1">Password:</div>
-					<div class="form_registration_input col-sm-6 col-lg-6"><input type="password" name="password"/></div>
+					<div class="form_registration_input col-sm-6 col-lg-6"><input type="password" name="password" ></div>
 					<?php $registrationFormSession->regPasswordLength();?>
 
 					<div class="form_registration_title col-sm-6 col-lg-4 offset-lg-1">Password:</div>
-					<div class="form_registration_input col-sm-6 col-lg-6"><input type="password" name="password2"/></div>
+					<div class="form_registration_input col-sm-6 col-lg-6"><input type="password" name="password2"></div>
 					<?php $registrationFormSession->regPasswordEqual();?>
 
 					<div class="form_registration_title col-12 col-sm-6 col-lg-4 offset-sm-3 offset-lg-4">
-					<input type="submit" name="register" value="Rejestruj!"/></div>
+					<input type="submit" name="register" value="Rejestruj!"></div>
 					<?php $registrationFormSession->regEmptyInputs();?>
 
 					</form>

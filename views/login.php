@@ -32,9 +32,15 @@
 				<br /><h1> Zaloguj się i rozpocznij przygodę z Minervą!</h1>
 
 			</header>
-
-			<form action="../controllers/login.php" method="post" class="row form_registration col-10 col-sm-10 col-lg-6 offset-1 offset-sm-1 offset-lg-3 mb-5">
-
+				
+				<?php $loginFormSessions->logBannedNick();?>
+				<?php $loginFormSessions->logBannedNickChanged();?>
+				<?php $loginFormSessions->logBannedNickLength();?>
+				<?php $loginFormSessions->logBannedNickType();?>
+				<?php $loginFormSessions->logBannedNickExist();?>
+				
+			<form action="../controllers/login.php" method="post" class="row form_registration col-12 col-sm-10 col-lg-6 offset-sm-1 offset-lg-3 mb-5">
+				<?php $loginFormSessions->logBannedAccount();?>
 				<div class="form_registration_title col-sm-6 col-lg-4 offset-lg-1">Login:</div>
 				<div class="form_registration_input col-sm-6 col-lg-6"><input type="text" name="login"/></div>
 
@@ -42,7 +48,7 @@
 				<div class="form_registration_input col-sm-6 col-lg-6"><input type="password" name="password"/></div>
 				<?php $loginFormSessions->logWrongLoginData();?>
 
-				<div class="form_registration_title col-12 col-sm-6 col-lg-4 offset-sm-3 offset-lg-4"><input type="submit" value="Zaloguj!"/></div>
+				<div class="form_registration_title col-12 col-sm-6 col-lg-4 offset-sm-3 offset-lg-4"><input type="submit" value="Zaloguj!" name="log"/></div>
 				<?php $loginFormSessions->logEmptyInputs();?>
 
 			</form>

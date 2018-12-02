@@ -57,21 +57,21 @@
 				$numGuilds = $query->rows("SELECT * FROM guilds_data ORDER BY guilds_data.guild_name ASC");
 
 				if ($i%2 == 1 && $i / $numGuilds !== 1){
-					echo "<div class='row'><div class='col-lg-6 mb-4'><div class='guild' onmouseenter='play();'><h2>{$i}. {$guild['guild_name']}</h2>
+					echo "<div class='row'><div class='col-lg-6 mb-4'><div class='guild'><h2>{$i}. {$guild['guild_name']}</h2>
 					<div class='row mb-4'><div class='guildAvatar col-6 offset-3 col-sm-4 offset-sm-0 mb-2'><img src='../public/img/guild-avatars/{$guild['guild_avatar']}'/></div>
 					<div class='guildData col-10 col-sm-7 offset-1 offset-sm-0'>Leader: {$leader['user']}<br />Exp: {$guild['guild_exp']}<br />Ilość członków: {$guild['guild_members']}</div></div>
 					<div class='guildDescription'>{$guild['guild_description']}</div><br />".$edit."</div></div><br />";
 					}
 
 				if($i / $numGuilds == 1 && $i%2 == 1){
-					echo "<div class='row'><div class='col-lg-6 offset-lg-3 guild' onmouseenter='play();'><h2>{$i}. {$guild['guild_name']}</h2>
+					echo "<div class='row'><div class='col-lg-6 offset-lg-3 guild'><h2>{$i}. {$guild['guild_name']}</h2>
 					<div class='row mb-4'><div class='guildAvatar col-6 offset-3 col-sm-4 offset-sm-0 mb-2'><img src='../public/img/guild-avatars/{$guild['guild_avatar']}'/></div>
 					<div class='guildData col-10 col-sm-7 offset-1 offset-sm-0'>Leader: {$leader['user']}<br />Exp: {$guild['guild_exp']}<br />Ilość członków: {$guild['guild_members']}</div></div>
 					<div class='guildDescription'>{$guild['guild_description']}</div><br />".$edit."</div></div><br />";
 				}
 
 				if ($i%2 == 0){
-					echo "<div class='col-lg-6'><div class='guild' onmouseenter='play();'><h2>{$i}. {$guild['guild_name']}</h2>
+					echo "<div class='col-lg-6'><div class='guild'><h2>{$i}. {$guild['guild_name']}</h2>
 					<div class='row mb-4'><div class='guildAvatar col-6 offset-3 col-sm-4 offset-sm-0 mb-2'><img src='../public/img/guild-avatars/{$guild['guild_avatar']}'/></div>
 					<div class='guildData col-10 col-sm-7 offset-1 offset-sm-0'>Leader: {$leader['user']}<br />Exp: {$guild['guild_exp']}<br />Ilość członków: {$guild['guild_members']}</div></div>
 					<div class='guildDescription'>{$guild['guild_description']}</div><br />".$edit."</div></div></div><br />";
@@ -106,7 +106,7 @@
 				if(isset($_POST["leave"])){
 					$query->update("UPDATE user_data SET id_guild = 0 WHERE user='$userName'");
 					$_SESSION['guild_leave_success'] =
-						"<div class='error col-6 offset-3''>Odszedłeś z gildii ".$guilds['guild_name'].".</div><br />";
+						"<div class='error col-12 col-sm-10 col-lg-6 offset-sm-1 offset-lg-3'>Odszedłeś z gildii ".$guilds['guild_name'].".</div><br />";
 					header ('Location: ../controllers/guilds.php');
 					exit();
 				}
@@ -116,7 +116,7 @@
 					$query->update("DELETE FROM guilds_data WHERE guild_leader='$idMember'");
 					$query->update("UPDATE user_data SET id_guild = 0 WHERE user='$userName'");
 					$_SESSION['guild_deleted'] =
-						"<div class='error col-6 offset-3''>
+						"<div class='error col-12 col-sm-10 col-lg-6 offset-sm-1 offset-lg-3'>
 							Usunąłeś gildię ".$guilds['guild_name'].".
 						</div><br />";
 					header ('Location: ../controllers/guilds.php');
@@ -139,7 +139,7 @@
 					$newGuildDescription = $_POST["guildDescription"];
 					if(strlen($newGuildDescription) < 10 || strlen($newGuildDescription) > 255){
 						$_SESSION['e_guild_describe'] =
-							"<div class='error col-6 offset-3''>
+							"<div class='error col-12 col-sm-10 col-lg-6 offset-sm-1 offset-lg-3'>
 								Opis gildii musi mieć przynajmniej 10 znaków, zaś maksymalnie 255.
 							</div><br />";
 						header ('Location: ../controllers/guilds-edit.php');
@@ -164,7 +164,7 @@
 					$newLeaderMatches = $query->rows("SELECT * FROM user_data WHERE user = '$newGuildLeaderName'");
 					if($newLeaderMatches < 1){
 						$_SESSION['e_guild_wrong_name'] =
-							"<div class='error col-6 offset-3''>
+							"<div class='error col-12 col-sm-10 col-lg-6 offset-sm-1 offset-lg-3'>
 								Gracz o podanym nicku nie jest w gildii lub nie ma takiego gracza w ogóle!
 							</div><br />";
 						header ('Location: ../controllers/guilds-edit.php');
@@ -172,7 +172,7 @@
 					}
 					if($newLeaderData['level'] < 10){
 						$_SESSION['e_guild_wrong_level'] =
-							"<div class='error col-6 offset-3''>
+							"<div class='error col-12 col-sm-10 col-lg-6 offset-sm-1 offset-lg-3'>
 								Gracz o podanym nicku nie ma 10 lvla, który uprawnia do bycia liderem gildii!
 							</div><br />";
 						header ('Location: ../controllers/guilds-edit.php');
@@ -200,7 +200,7 @@
 
 		if($leaderLevel < 10){
 			$_SESSION['e_guild_level'] =
-				"<div class='error col-6 offset-3''>
+				"<div class='error col-12 col-sm-10 col-lg-6 offset-sm-1 offset-lg-3'>
 					Żeby założyć gildię, musisz osiągnąć maksymalny poziom!
 				</div><br />";
 			header ('Location: ../controllers/guilds.php');
@@ -209,7 +209,7 @@
 
 		if(strlen($guildName) < 5 || strlen($guildName) > 20){
 			$_SESSION['e_guildname_length'] =
-				"<div class='error col-6 offset-3''>
+				"<div class='error col-12 col-sm-10 col-lg-6 offset-sm-1 offset-lg-3'>
 					Nazwa gildii musi mieć od 5 do 20 znaków
 				</div><br />";
 			header ('Location: ../controllers/guilds-creating.php');
@@ -230,7 +230,7 @@
 		$guildDescription = $_POST['guildDescription'];
 		if(strlen($guildDescription) < 10 || strlen($guildDescription) > 255){
 			$_SESSION['e_guild_describe'] =
-				"<div class='error col-6 offset-3''>
+				"<div class='error col-12 col-sm-10 col-lg-6 offset-sm-1 offset-lg-3'>
 					Opis gildii musi mieć przynajmniej 10 znaków, zaś maksymalnie 255
 				</div><br />";
 			header ('Location: ../controllers/guilds-creating.php');
@@ -258,7 +258,7 @@
 		foreach($guilds as $guild){
 				if($i['guild_leader'] == $idLeader){
 					$_SESSION['e_leader'] =
-						"<div class='error col-6 offset-3''>
+						"<div class='error col-12 col-sm-10 col-lg-6 offset-sm-1 offset-lg-3'>
 							Ta sama osoba nie może kierować dwoma gildiami!
 						</div><br />";
 					header ('Location: ../controllers/guilds.php');

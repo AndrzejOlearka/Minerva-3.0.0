@@ -15,6 +15,13 @@ class RegistrationSessions{
 			unset($_SESSION['e_nick_reg_signs']);
 		}
 	}   
+
+	public function regNickExist(){
+		if(isset($_SESSION['e_nick_reg_exist'])){
+			echo $_SESSION['e_nick_reg_exist'];
+			unset($_SESSION['e_nick_reg_exist']);
+		}
+	}   
 	
 	public function regEmailValid(){
 		if(isset($_SESSION['e_email_reg_valid'])){
@@ -48,6 +55,20 @@ class RegistrationSessions{
 		if(isset($_SESSION['e_form_reg_inputs'])){
 			echo $_SESSION['e_form_reg_inputs'];
 			unset($_SESSION['e_form_reg_inputs']);
+		}
+	}   	
+	
+	public function regNickSession(){
+		if(isset($_SESSION['nick_session'])){
+			echo $_SESSION['nick_session'];
+			unset($_SESSION['nick_session']);
+		}
+	}   	
+	
+	public function regEmailSession(){
+		if(isset($_SESSION['email_session'])){
+			echo $_SESSION['email_session'];
+			unset($_SESSION['email_session']);
 		}
 	}   	
 	

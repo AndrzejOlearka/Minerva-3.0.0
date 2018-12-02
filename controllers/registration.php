@@ -3,7 +3,7 @@
 session_start();
 
 require '../classes/Registration.php';
-if (isset($_POST['nick']) && ($_POST['password']) && ($_POST['password2']) && ($_POST['email'])){
+if (isset($_POST['register'])){
 	Registration::register();	
 }
 

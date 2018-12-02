@@ -11,23 +11,24 @@ class Registration{
 
 		if (isset($_POST['nick']) && ($_POST['password']) && ($_POST['password2']) && ($_POST['email'])){
 				
-				$flag = true;	
+				$permission = true;	
 				$nick = filter_input(INPUT_POST, 'nick');
-				
+				$_SESSION['nick_session'] = $_POST['nick'];
+				$_SESSION['email_session'] = $_POST['email'];
 				if ((strlen($nick)<5) || (strlen($nick)>20)){
-					$flag = false;	
+					$permission = false;	
 					$_SESSION['e_nick_reg_length'] = '<div class="error col-12">Nick musi posiadać od 5 do 20 znaków!</div>';
 				}
 				
 				if (ctype_alnum($nick) == false){
-					$flag = false;	
+					$permission = false;	
 					$_SESSION['e_nick_reg_signs'] = '<div class="error col-12">Nick może składać się tylko z liter i cyfr oraz nie może składać się z polskich znaków!</div>';
 				}
 				
 				$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 				
 				if (empty($email)){
-					$flag = false;	
+					$permission = false;	
 					$_SESSION['e_email_reg_valid']='<div class="error col-12">Podaj poprawny adres e-mail</div>';
 				}
 				
@@ -35,12 +36,12 @@ class Registration{
 				$password2 = filter_input(INPUT_POST, 'password2');
 				
 				if((strlen($password) <5) || (strlen($password) > 20)){
-					$flag = false;	
+					$permission = false;	
 					$_SESSION['e_password_reg_length']='<div class="error col-12">Hasło musi posiadać od 5 do 20 znaków!</div>';
 				}
 				
 				if ($password != $password2){
-					$flag = false;	
+					$permission = false;	
 					$_SESSION['e_password_reg_equal']='<div class="error col-12">Podane hasła nie są identyczne</div>';
 				}
 				
@@ -52,8 +53,8 @@ class Registration{
 				$countEmails = $idQuery->rowCount();
 				
 				if ($countEmails > 0){
-					$flag = false;	
-					$_SESSION['e_email_reg_exist']='<div class="error col-12"><Istnieje już konto przypisane do tego adresu email!</div>';						
+					$permission = false;	
+					$_SESSION['e_email_reg_exist']='<div class="error col-12">Istnieje już konto przypisane do tego adresu email!</div>';						
 				}		
 				
 				$nickQuery = $dataBase->prepare('SELECT id FROM user_data WHERE user = :nick');
@@ -62,11 +63,11 @@ class Registration{
 				$countEmails = $nickQuery->rowCount();
 				
 				if ($countEmails> 0){
-					$flag = false;	
+					$permission = false;	
 					$_SESSION['e_nick_reg_exist']='<div class="error col-12">Istnieje już gracz o takim nicku, wybierz inny!</div>';					
 				}		
 				
-				if ($flag == true){		
+				if ($permission == true){		
 				
 				$registerQuery = $dataBase->prepare("INSERT INTO user_data VALUES (NULL, :nick, '$passwordHash', :email, 1, 1, now() + INTERVAL 3 DAY, 5, 0)");
 				$registerQuery->bindValue(':nick', $nick, PDO::PARAM_STR); 
@@ -95,8 +96,8 @@ class Registration{
 		}
 		else
 		{
-				$flag = false;	
-				$_SESSION['e_form_reg_inputs'] = '<div class="error col-12">Nie wypełniłeś wszystkich pól formularza rejestracji!</div><br /><br />';
+				$permission = false;	
+				$_SESSION['e_form_reg_inputs'] = '<div class="error col-12">Nie wypełniłeś wszystkich pól formularza rejestracji!</div>';
 				header ('Location: ../controllers/registration.php');
 				exit();
 		}		
