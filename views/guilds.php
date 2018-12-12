@@ -8,6 +8,8 @@
 <?php require 'partials/head-html.php'; ?>
 
 	<link rel="stylesheet" href="../public/style/style-guilds.css">
+	<link rel="stylesheet" href="../public/style/style-equipment.css">
+	<script src="../public/javascript/popup.js"></script>
 
 </head>
 
@@ -73,8 +75,8 @@
 			
 			?>
 
-			<?php require 'partials/footer.php'; ?>
-
+			<?php require 'partials/footer.php'; ?>		
+			
 		</div>
 
 	</main>

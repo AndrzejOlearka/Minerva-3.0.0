@@ -70,17 +70,28 @@ class Admin{
 					<td>' . $value['premium_end'] . '</td>
 					<td>' . $value['id_guild'] . '</td>';
 					if($value['user'] !== 'admin' && Admin::checkModeratorUser($value['user']) == false){
-						echo '<td><input type="button" name="changing" value="zmień nick" data-changing='.$value['user'].'></td>';
+						if(Admin::checkBannedUser($value['user']) == false){
+							echo '<td><input type="button" name="changing" value="zmień nick" data-changing='.$value['user'].'></td>';
+						}						
+						else{
+							echo '<td><input type="button" name="changing" value="zmień nick" data-changing='.$value['user'].' style="display: none"></td>';
+						}
 					}
 					else{
 						echo '<td><div class="text-center success col-12" >MOD</div></td>';
 					}
 					if($value['user'] !== 'admin' && Admin::checkModeratorUser($value['user']) == false){
 						if(Admin::checkBannedUser($value['user']) == false){
-							echo '<td><input type="button" name="banning" value="zbanuj" data-banning='.$value['user'].'></td>';
+							echo '<td>
+								<input type="button" name="banning" value="zbanuj" data-banning='.$value['user'].'>
+								<input type="button" name="unbanning" value="odbanuj" data-unbanning='.$value['user'].' style="display: none">
+							</td>';
 						}
 						else{
-							echo '<td><input type="button" name="unbanning" value="odbanuj" data-unbanning='.$value['user'].'></td>';
+							echo '<td>
+								<input type="button" name="unbanning" value="odbanuj" data-unbanning='.$value['user'].'>
+								<input type="button" name="banning" value="zbanuj" data-banning='.$value['user'].' style="display: none">
+							</td>';
 						}
 					}
 					else{
@@ -118,11 +129,18 @@ class Admin{
 
 		if(isset($_POST['moderator'])){
 
+			if(empty($_POST['moderator'])){
+				header ('Location: ../controllers/admin.php');
+				exit();
+			}
+			
 			$moderator = filter_input(INPUT_POST, 'moderator');
 
 			$query = $dataBase->prepare("INSERT INTO moderators VALUES (:moderator, now())");
 			$query->bindValue(':moderator', $moderator , PDO::PARAM_STR);
 			$query->execute();
+			header ('Location: ../controllers/admin.php');
+			exit();
 		}
 	}
 
@@ -183,7 +201,7 @@ class Admin{
 	
 	public function banUserNick($changedNick){
 		$query = require '../core/bootstrap.php';	
-		$query->update("INSERT INTO banned_users VALUES ('$changedNick', now() + INTERVAL 7 DAY, true)");
+		$query->update("INSERT INTO banned_users VALUES ('$changedNick', now() + INTERVAL 30 DAY, true)");
 	}
 	
 	

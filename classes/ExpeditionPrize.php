@@ -3,8 +3,17 @@
 
 	class ExpeditionPrize{
 
-		public function getExpeditionPrize($expeditionNumber)
-		{
+		public static function addGuildExp($exp){
+			
+			$query = require '../core/bootstrap.php';
+			$guildMemberData = $query->select("SELECT user, id_guild FROM user_data WHERE user = '$userName'");
+			$idGuild = $guildMemberData['id_guild'];
+			$query->update("UPDATE guilds_data SET guild_exp = guild_exp + $exp WHERE id_guild = '$idGuild'");
+			
+		}
+		
+		public function getExpeditionPrize($expeditionNumber){
+			
 			$query = require '../core/bootstrap.php';
 			require_once '../core/premium.php';
 			$expeditionNumber = $expeditionNumber - 1;
@@ -39,10 +48,25 @@
 			$newExp = $exp[$expeditionNumber]+$data['exp'];
 			$query->update("UPDATE user_data SET exp = $newExp WHERE user = '$userName'");
 			$query->update("UPDATE expeditions_data SET expedition_prize = false WHERE user = '$userName'");
-			return $expeditionPrizeInfo =  "<br /><div class='success col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3'>
-				Zadanie z poszukiwaniem ".$mineralPrizeInfo[$expeditionNumber]." zostało zakończone!<br />
-				otrzymałeś: ".$rand." ".$mineralPrizeInfo[$expeditionNumber]."  
-				oraz ".$exp[$expeditionNumber]." punktów doświadczenia</div><br />";
+			
+			$idGuild = $data['id_guild'];
+			if($idGuild !== 0){
+				ExpeditionPrize::addGuildExp($exp[$expeditionNumber]);
+			}	
+			
+			if($idGuild == 0){
+				return $expeditionPrizeInfo =  "<br /><div class='success col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3'>
+					Zadanie z poszukiwaniem ".$mineralPrizeInfo[$expeditionNumber]." zostało zakończone!<br />
+					otrzymałeś: ".$rand." ".$mineralPrizeInfo[$expeditionNumber]."  
+					oraz ".$exp[$expeditionNumber]." punktów doświadczenia.</div><br />";
+			}	
+			else{
+				return $expeditionPrizeInfo =  "<br /><div class='success col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3'>
+					Zadanie z poszukiwaniem ".$mineralPrizeInfo[$expeditionNumber]." zostało zakończone!<br />
+					otrzymałeś: ".$rand." ".$mineralPrizeInfo[$expeditionNumber]."  
+					oraz ".$exp[$expeditionNumber]." punktów doświadczenia.<br />
+					Exp twojej gildii również zwiększył się o tą ilość!</div><br />";
+			}
 
 		}
 	}

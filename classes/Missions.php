@@ -5,12 +5,22 @@
 
 class Missions{
 
-	function __construct($nr){
+		public static function addGuildExp($exp){
+			
+			$query = require '../core/bootstrap.php';
+			$guildMemberData = $query->select("SELECT user, id_guild FROM user_data WHERE user = '$userName'");
+			$idGuild = $guildMemberData['id_guild'];
+			$query->update("UPDATE guilds_data SET guild_exp = guild_exp + $exp WHERE id_guild = '$idGuild'");
+			
+		}
+	
+	public function getMission($nr){
 
 		$query = require '../core/bootstrap.php';
 		$equipment = $query->select("SELECT * FROM user_data JOIN basic_equipment JOIN rare_equipment ON user_data.user=basic_equipment.user
 			WHERE user_data.user = '$userName' AND basic_equipment.user = '$userName' AND rare_equipment.user = '$userName'");
-
+		$idGuild = $equipment['id_guild'];
+		
 		$minerals = ['diamonds', 'rubies', 'agates', 'sapphires', 'emeralds', 'topazes', 'turquoises', 'amethysts', 'malachites'];
 		$minerals2 = ['crystals', 'morganites', 'pearls', 'fluorites', 'aquamarines', 'cymophanes', 'opales', 'painites', 'jadeites'];
 
@@ -82,11 +92,23 @@ class Missions{
 		$query->update("UPDATE basic_equipment SET $minerals[$nr] = $newMineralAmount WHERE user = '$userName'");
 		$query->update("UPDATE rare_equipment SET $minerals2[$nr] = $newMineralAmount2 WHERE user = '$userName'");
 		$query->update("UPDATE user_data SET exp = $newExpAmount WHERE user = '$userName'");
+		if($idGuild !== 0){
+			Missions::addGuildExp(1000);
+		}	
 
-		$_SESSION['mission_completed'] =
-			"<div class='success col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3'>
-				Misja została ukończona, ".$sessionMissionsText[$nr].", Otrzymałeś 1000 expa.
-			</div><br /><br />";
+		if($idGuild == 0){
+			$_SESSION['mission_completed'] =
+				"<div class='success col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3'>
+					Misja została ukończona, ".$sessionMissionsText[$nr].", Otrzymałeś 1000 expa.
+				</div><br /><br />";
+		}
+		else{
+			$_SESSION['mission_completed'] =
+				"<div class='success col-10 col-sm-8 col-lg-6 offset-1 offset-sm-2 offset-lg-3'>
+					Misja została ukończona, ".$sessionMissionsText[$nr].", Otrzymałeś 1000 expa.<br /> 
+					Twoja gildia równiez otrzymała tą ilość expa.
+				</div><br /><br />";
+		}
 		header('Location: ../controllers/missions.php');
 		exit();
 

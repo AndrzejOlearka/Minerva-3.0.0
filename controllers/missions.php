@@ -6,7 +6,8 @@
 	
 	for($nr = 0; $nr<=8; $nr++){
 		if(isset($_POST["mission$nr"])){
-			$mission = new Missions($nr);
+			$mission = new Missions();
+			$mission->getMission($nr);
 		}
 	}
 		

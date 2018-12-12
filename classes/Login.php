@@ -29,10 +29,12 @@ class Login{
 					$query = require '../core/bootstrap.php';	
 					$usersExistOnBanList = $query->rows("SELECT * FROM banned_users WHERE user = '$login'");				
 						if($usersExistOnBanList==1){
-							$bannedData = $query->select("SELECT * FROM banned_users WHERE user = '$login'");
+							$bannedData = $query->select("SELECT * FROM banned_users WHERE user = '$login'");								
+							$banEndTime = DateTime::createFromFormat('Y-m-d H:i:s', $bannedData['banning_date']);
+							$banEndTime = $banEndTime->format('Y/m/d H:i:s');
 							if($bannedData['nick_change_required'] == true){
 								$_SESSION['change_nick_form'] = 
-								'<div class="error col-12 col-sm-10 col-lg-6 offset-sm-1 offset-lg-3">Wymagane jest podanie nowego nicku, za poprzedni zostałeś zbanowany na czas nieokreślony.
+								'<div class="error col-12 col-sm-10 col-lg-6 offset-sm-1 offset-lg-3">Wymagane jest podanie nowego nicku, przez niepoprawany nick jaki posiadałeś zostałeś zbanowany do '.$banEndTime.'.
 									<form method="post" action="../controllers/login.php">
 										<div class="form_registration_title col-sm-6 col-lg-4 offset-lg-4">Nowy nick:</div>
 										<div class="form_registration_input col-6 offset-3"><input type="text" name="newNick"/></div>
@@ -44,8 +46,7 @@ class Login{
 								exit();
 							}
 							else{
-								$banEndTime = DateTime::createFromFormat('Y-m-d H:i:s', $bannedData['banning_date']);
-								$banEndTime = $banEndTime->format('Y/m/d H:i:s');
+
 								unset($_SESSION['user']);
 								$_SESSION['e_banned_account'] = '<div class="error col-12">UWAGA!!! Konto '.$login.' jest zbanowane do '.$banEndTime.'!</div>';
 								header('Location: ../controllers/login.php');

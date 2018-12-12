@@ -6,20 +6,25 @@ require_once '../classes/Admin.php';
 $admin = new Admin();
 
 if(isset($_POST['banning'])){
-$accountBan = $_POST['banning'];
-$admin->banAccount($accountBan);
+	$accountBan = $_POST['banning'];
+	$admin->banAccount($accountBan);
 }
 if(isset($_POST['unbanning'])){
-$accountBan = $_POST['unbanning'];
-$admin->unbanAccount($accountBan);
+	$accountBan = $_POST['unbanning'];
+	$admin->unbanAccount($accountBan);
 }
 if(isset($_POST['deleting'])){
-$accountDelete = $_POST['deleting'];
-$admin->deleteAccount($accountDelete);
+	$accountDelete = $_POST['deleting'];
+	$admin->deleteAccount($accountDelete);
 }
 if(isset($_POST['changing'])){
-$nickChange = $_POST['changing'];
-$admin->banUserNick($nickChange);
+	$nickChange = $_POST['changing'];
+	$admin->banUserNick($nickChange);
+}
+
+if(isset($_POST['moderator'])){
+	$newModerator = $_POST['moderator'];
+	$admin->addModerator($newModerator);
 }
 
 require '../classes/Stats.php';

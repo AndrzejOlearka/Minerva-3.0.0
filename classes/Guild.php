@@ -57,25 +57,26 @@
 				$numGuilds = $query->rows("SELECT * FROM guilds_data ORDER BY guilds_data.guild_name ASC");
 
 				if ($i%2 == 1 && $i / $numGuilds !== 1){
-					echo "<div class='row'><div class='col-lg-6 mb-4'><div class='guild'><h2>{$i}. {$guild['guild_name']}</h2>
-					<div class='row mb-4'><div class='guildAvatar col-6 offset-3 col-sm-4 offset-sm-0 mb-2'><img src='../public/img/guild-avatars/{$guild['guild_avatar']}'/></div>
+					echo "<div class='row'><div class='col-lg-6 mb-4'><div class='guild'><h2 data-popup-open='popup-{$guild['guild_name']}'>{$i}. {$guild['guild_name']}</h2>
+					<div class='row mb-4'><div class='guildAvatar col-6 offset-3 col-sm-4 offset-sm-0 mb-2'><img src='../public/img/guild-avatars/{$guild['guild_avatar']}' data-popup-open='popup-{$guild['guild_name']}'/></div>
 					<div class='guildData col-10 col-sm-7 offset-1 offset-sm-0'>Leader: {$leader['user']}<br />Exp: {$guild['guild_exp']}<br />Ilość członków: {$guild['guild_members']}</div></div>
 					<div class='guildDescription'>{$guild['guild_description']}</div><br />".$edit."</div></div><br />";
 					}
 
 				if($i / $numGuilds == 1 && $i%2 == 1){
-					echo "<div class='row'><div class='col-lg-6 offset-lg-3 guild'><h2>{$i}. {$guild['guild_name']}</h2>
-					<div class='row mb-4'><div class='guildAvatar col-6 offset-3 col-sm-4 offset-sm-0 mb-2'><img src='../public/img/guild-avatars/{$guild['guild_avatar']}'/></div>
+					echo "<div class='row'><div class='col-lg-6 offset-lg-3 guild'><h2 data-popup-open='popup-{$guild['guild_name']}'>{$i}. {$guild['guild_name']}</h2>
+					<div class='row mb-4'><div class='guildAvatar col-6 offset-3 col-sm-4 offset-sm-0 mb-2'><img src='../public/img/guild-avatars/{$guild['guild_avatar']}' data-popup-open='popup-{$guild['guild_name']}'/></div>
 					<div class='guildData col-10 col-sm-7 offset-1 offset-sm-0'>Leader: {$leader['user']}<br />Exp: {$guild['guild_exp']}<br />Ilość członków: {$guild['guild_members']}</div></div>
 					<div class='guildDescription'>{$guild['guild_description']}</div><br />".$edit."</div></div><br />";
 				}
 
 				if ($i%2 == 0){
-					echo "<div class='col-lg-6'><div class='guild'><h2>{$i}. {$guild['guild_name']}</h2>
-					<div class='row mb-4'><div class='guildAvatar col-6 offset-3 col-sm-4 offset-sm-0 mb-2'><img src='../public/img/guild-avatars/{$guild['guild_avatar']}'/></div>
+					echo "<div class='col-lg-6'><div class='guild'><h2 data-popup-open='popup-{$guild['guild_name']}'>{$i}. {$guild['guild_name']}</h2>
+					<div class='row mb-4'><div class='guildAvatar col-6 offset-3 col-sm-4 offset-sm-0 mb-2'><img src='../public/img/guild-avatars/{$guild['guild_avatar']}' data-popup-open='popup-{$guild['guild_name']}'/></div>
 					<div class='guildData col-10 col-sm-7 offset-1 offset-sm-0'>Leader: {$leader['user']}<br />Exp: {$guild['guild_exp']}<br />Ilość członków: {$guild['guild_members']}</div></div>
 					<div class='guildDescription'>{$guild['guild_description']}</div><br />".$edit."</div></div></div><br />";
 				}
+				echo "<div class='popupEquipment' data-popup='popup-{$guild['guild_name']}'><br /><a data-popup-close='popup-{$guild['guild_name']}' ><h1>&gt;&gt; powrót &lt;&lt; </h1></a></div>";
 				$i++;
 			}
 		}

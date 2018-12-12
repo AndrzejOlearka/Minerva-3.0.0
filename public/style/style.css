@@ -98,6 +98,7 @@ main header h1, main h1{
 	border: 7px solid #335699;
 	border-radius: 20px;
 	letter-spacing: 2px;
+	padding:5px;
 }
 
 .success{
@@ -106,7 +107,7 @@ main header h1, main h1{
 	border: 7px solid #335699;
 	border-radius: 20px;
 	letter-spacing: 2px;
-	padding:10px;
+	padding:5px;
 }
 
 input{

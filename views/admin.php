@@ -37,9 +37,13 @@
 			<nav class="row">
 				<div id="admin1" class="col-6 col-sm-4 col-lg-2 offset-3 offset-sm-4 offset-lg-3"><p>Gracze</p></div>
 
-				<div id="admin2"  class="col-6 col-sm-4 col-lg-2 offset-3 offset-sm-4 offset-lg-0"><p>Wyszukiwarka</p></div>
+				<div id="admin2" class="col-6 col-sm-4 col-lg-2 offset-3 offset-sm-4 offset-lg-0"><p>Wyszukiwarka</p></div>
 
-				<div id="admin3"  class="col-6 col-sm-4 col-lg-2 offset-3 offset-sm-4 offset-lg-0"><p>Moderatorzy</p></div>
+				<div id="admin3" class="col-6 col-sm-4 col-lg-2 offset-3 offset-sm-4 offset-lg-0"><p>Moderatorzy</p></div>
+				
+				<?php if(isset($_SESSION['moderator_mode'])){
+					echo '<div class="col-6 col-sm-4 col-lg-2 offset-3 offset-sm-4 offset-lg-5 "><a href="../controllers/equipment.php"><p>Przejdź do trybu gracza</p></a></div>';
+				}?>
 			</nav>
 
 			<div id="adminPlayers">
@@ -85,7 +89,7 @@
 						<div class="search col-12 col-sm-8 col-lg-4 offset-sm-2 offset-lg-4">
 							<form action ="../controllers/admin.php" method="post">
 								<input type="text" id="searchInput" class="col-10 offset-1" name="moderator">
-								<input type="submit"  class="col-4"  value="dodaj!">
+								<input type="submit"  class="col-4" value="dodaj!">
 							</form>
 						</div>
 					</div><br />

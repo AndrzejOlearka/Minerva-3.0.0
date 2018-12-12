@@ -1,7 +1,7 @@
 	
 				$('input[name="banning"]').on('click', function(){
-					alert("Zbanowałeś gracza!");
 					var banning = $(this).data("banning");
+					alert("Zbanowałeś gracza "+banning+" na okres 7 dni!");
 					console.log(banning);
 					$.ajax({
 						url:"../controllers/admin.php",
@@ -10,21 +10,20 @@
 						data:{banning:banning},
 						success: function(){
 							var session = document.querySelector('#banning');
-							$info = $("<div class='row success col-6 offset-3'></div>");
-							$info.append('Zbanowano gracza '+ banning);
+							$info = $("<div class='row text-center error col-6 offset-3'></div>");
+							$info.append('Zbanowano gracza '+ banning + ' na okres 7 dni!');
 							$('#banning').append($info);
-							$('input[data-banning="'+banning+'"]').attr("name", 'unbanning');
-							$('input[data-banning="'+banning+'"]').val('odbanuj');
-							$('input[data-banning="'+banning+'"]').attr('data-unbanning', ''+banning+'');
-							$('input[data-banning="'+banning+'"]').removeAttr("data-banning");
+							$('input[data-changing="'+banning+'"]').css({"display" : "none"});
+							$('input[data-banning="'+banning+'"]').css({"display" : "none"});
+							$('input[data-unbanning="'+banning+'"]').css({"display" : "block"});
 							}
 						});
 					});
 				
 
-				$('input[name="unbanning"]').on('click', function(){
-					alert("Odbanowałeś gracza!");
+				$('input[name="unbanning"]').on('click', function(){	
 					var unbanning = $(this).data("unbanning");
+					alert("Odbanowałeś gracza "+unbanning+"!");
 					console.log(unbanning);
 					$.ajax({
 						url:"../controllers/admin.php",
@@ -33,19 +32,19 @@
 						data:{unbanning:unbanning},
 						success: function(){
 							var session = document.querySelector('#banning');
-							$info = $("<div class='row success col-6 offset-3'></div>");
+							$info = $("<div class='row text-center success col-6 offset-3'></div>");
 							$info.append('Odbanowano gracza '+ unbanning);
 							$('#banning').append($info);
-							$('input[data-unbanning="'+unbanning+'"]').attr("name", 'banning');
-							$('input[data-unbanning="'+unbanning+'"]').val('zbanuj');
-							$('input[data-unbanning="'+unbanning+'"]').attr('data-banning', ''+unbanning+'');
-							$('input[data-unbanning="'+unbanning+'"]').removeAttr("data-unbanning");
+							$('input[data-changing="'+unbanning+'"]').css({"display" : "block"});
+							$('input[data-banning="'+unbanning+'"]').css({"display" : "block"});
+							$('input[data-unbanning="'+unbanning+'"]').css({"display" : "none"});
 							}
 						});
 					});
 					
 				$('input[name="changing"]').click(function(){
 					var changing = $(this).data("changing");
+					alert("Nakazałeś zmienić nick graczowi "+changing+" i zbanowałeś na okres 30 dni lub do zmiany nicku!");
 					console.log(changing);
 					$.ajax({
 						url:"../controllers/admin.php",
@@ -54,9 +53,12 @@
 						data:{changing:changing},
 						success: function(){
 							var session = document.querySelector('#changing');
-							$info = $("<div class='row success col-6 offset-3'></div>");
-							$info.append('Nakazano zmienić nick graczowi '+ changing);
+							$info = $("<div class='row text-center error col-6 offset-3'></div>");
+							$info.append('Nakazano zmienić nick graczowi '+ changing + ' na okres 30 dni! lub do zmiany nicku');
 							$('#banning').append($info);
+							$('input[data-changing="'+changing+'"]').css({"display" : "none"});
+							$('input[data-banning="'+changing+'"]').css({"display" : "none"});
+							$('input[data-unbanning="'+changing+'"]').css({"display" : "block"});
 							}
 						});
 					});
