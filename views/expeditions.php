@@ -54,16 +54,16 @@
 					
 <?php
 
-if(isset($postRefreshAjax)){
-	echo $postRefreshAjax;
+if(isset($expeditionArray['postRefreshAjax'])){
+	echo $expeditionArray['postRefreshAjax'];
 }
 
-if(isset($expeditionInfo)){
-	echo $expeditionInfo;
+if(isset($expeditionArray['expeditionInfo'])){
+	echo $expeditionArray['expeditionInfo'];
 }
 
-if(isset($expeditionPrizeInfo)){
-	echo $expeditionPrizeInfo;
+if(isset($expeditionArray['expeditionPrizeInfo'])){
+	echo $expeditionArray['expeditionPrizeInfo'];
 }
 
 $expeditionSession->expErrorLowLevel();

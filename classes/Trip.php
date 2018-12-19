@@ -16,8 +16,7 @@
 			$query = require '../core/bootstrap.php';
 
 			$tripNumber = $this->tripNumber;
-			$query->update("UPDATE trips_data SET trip_number = '$tripNumber' WHERE user = '$userName'");
-			$query->update("UPDATE trips_data SET trip_start = now() WHERE user = '$userName'");
+			$query->update("UPDATE trips_data SET trip_number = '$tripNumber', trip_start = now() WHERE user = '$userName'");
 			
 			$a = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 			$tripPrize = $a[mt_rand(0, count($a) - 1)];

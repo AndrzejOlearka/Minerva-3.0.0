@@ -29,7 +29,7 @@ $(document).ready(function(){
 									if (zadanie-1 == i){break;}
 								}
 								tekst.textContent = "W tej chwili wykonujesz ekspedycję "+e;
-								var time = document.querySelector('#expedition');
+								var expedition = document.querySelector('#expedition');
 								$form = $("<form method='post' action='../controllers/expeditions.php'></form>");
 								$form.append('<input type="submit" name="stopExpedition" value="Przerwij ekspedycje!">');
 								$form.addClass('row col-6 offset-3');
@@ -38,7 +38,7 @@ $(document).ready(function(){
 								var time = document.querySelector('#time');		
 								if(diff<1)
 								{
-									time.textContent = "Twoja ekspedycja została zakończona!"	
+									expedition.textContent = "Twoja ekspedycja została zakończona!"	
 									$('.button').show();
 									var reload = setInterval(function() {
 										location.reload(); 

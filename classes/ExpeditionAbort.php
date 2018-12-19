@@ -1,12 +1,12 @@
 ﻿<?php
 
-	class ExpeditionAbort{
+	require_once "../classes/ExpeditionsActions.php";
+
+	class ExpeditionAbort extends ExpeditionsActions{
 
 		public function stopExpedition(){
-
 			$query = require '../core/bootstrap.php';
-			$expeditionNumber = $query->select("SELECT expedition_number FROM expeditions_data WHERE user = '$userName'");
-			$expeditionNumber = $expeditionNumber['expedition_number'] - 1;
+			$expeditionNumber = $this->getDeincrementationedExpeditionNumber();
 			$coinsRefund = [2, 5, 10, 15, 20, 50, 100, 100, 100, 200, 0, 0];
 			for($i = 0; $i<12; $i++){
 				if($expeditionNumber == $i){
@@ -14,8 +14,7 @@
 					break;
 				}
 			}
-			$query->update("UPDATE expeditions_data SET expedition_number = 0 WHERE user = '$userName'");
-			$query->update("UPDATE expeditions_data SET expedition_end = now() WHERE user = '$userName'");
+			$query->update("UPDATE expeditions_data SET expedition_number = 0, expedition_end = now() WHERE user = '$userName'");
 
 			$minerals = [
 				'bursztynów', 'agatów', 'malachitów', 'turkusów', 'ametystów', 'topazów',
