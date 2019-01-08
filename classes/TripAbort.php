@@ -1,26 +1,22 @@
 ﻿<?php	
 	
-	// ustawienie nr wyprawy oraz czasu rozpoczecia i zakonczenia dla losowych zdarzen
-	// setting the expedition number, trip start  and trip end time for random events
-	
-	
-	class TripAbort{
+	require_once "../classes/TripsOperations.php";
+		
+	class TripAbort extends TripsOperations{
 		
 		public function stopTrip(){	
-
+			$tripNumber = $this->getDeincrementationedTripNumber();
+			$mineralsName = $this->getPrizeInfoArray();
 			$query = require '../core/bootstrap.php';
-			$tripNumber = $query->select("SELECT trip_number FROM trips_data WHERE user = '$userName'");
-			$query->update("UPDATE trips_data SET trip_number = 0 WHERE user = '$userName'");
-			$query->update("UPDATE trips_data SET trip_end = now() WHERE user = '$userName'");
-			$tripNumber = $tripNumber['trip_number'] - 1;
-			$minerals = [
-			'z poszukiwaniem jadeitów', 'z poszukiwaniem kryształów', 'z poszukiwaniem painitów', 'z poszukiwaniem fluorytów', 'z poszukiwaniem morganitów', 
-			'z poszukiwaniem akwamarynów', 'z poszukiwaniem opali', 'z poszukiwaniem pereł', 'z poszukiwaniem cymofanów'];
+			$query->updateBindValue(
+				"UPDATE trips_data 
+				SET trip_number = 0, trip_end = now(), trip_prize = false 
+				WHERE user = ?", 
+				$bindedValues = [$userName]);
 			$_SESSION['trip_stopped'] = 
 				'<div class="error col-10 col-sm-8 offset-1 offset-sm-2">
-					Przerwałeś zadanie '.$minerals[$tripNumber].', wyrusz ponownie na wyprawę, ona nic nie kosztuje!
+					Przerwałeś zadanie z poszukiwaniem '.$mineralsName[$tripNumber].', wyrusz ponownie na wyprawę, ona nic nie kosztuje!
 				</div>';
-			$query->update("UPDATE trips_data SET trip_prize = false WHERE user = '$userName'");
 			unset($_SESSION['only_exp']);
 			unset($_SESSION['only_coins']);	
 			unset($_SESSION['main_minerals']);			

@@ -2,10 +2,9 @@
 
 session_start();
 
-require '../classes/Registration.php';
-if (isset($_POST['register'])){
-	Registration::register();	
-}
+require '../classes/ActionRegistration.php';
+$registration = new ActionRegistration();
+$registration->register();
 
 require '../sessions/registration-sessions.php';
 $registrationFormSession = new RegistrationSessions();

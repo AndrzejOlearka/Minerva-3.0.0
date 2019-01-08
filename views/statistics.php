@@ -53,8 +53,8 @@
 
 <?php 
 
-if(isset($_POST['nick'])){
-	$statistics->searchUser();
+if(isset($searchUserResult)){
+	echo $searchUserResult;
 }
 
 $statisticsSession->searchUserError();
@@ -65,19 +65,19 @@ $statisticsSession->searchUserError();
 
 		<h2> Najbardziej doświadczeni gracze:</h2>
 <?php
-$statistics->statsExp();
+echo $statsCreatorResult[0];
 ?>
 
 		<br /><h2> Najbogatsi gracze:</h2><br />
 		
 <?php
-$statistics->statsCoins();	
+echo $statsCreatorResult[1];
 ?>		
 
 		<br /><h2> Najlepsze gildie:</h2><br />
 		
 <?php
-$statistics->statsGuilds();	
+echo $statsCreatorResult[2];
 ?>		
 			
 <?php require 'partials/footer.php'; ?>

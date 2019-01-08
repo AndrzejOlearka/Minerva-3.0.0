@@ -1,7 +1,11 @@
 ﻿	<?php
 
-	require '../classes/Stats.php';
-	$statistics = new Stats;
+	session_start();
+	
+	require '../classes/ActionStatistics.php';
+	$statistics = new ActionStatistics();
+	$statsCreatorResult = $statistics->showStats();
+	$searchUserResult = $statistics->searchUser();
 			
 	require '../sessions/statistics-sessions.php';
 	$statisticsSession = new StatisticsSessions();

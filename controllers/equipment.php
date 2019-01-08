@@ -4,15 +4,9 @@ require_once '../views/partials/logged-checking.php';
 
 require '../classes/AmountMinerals.php';
 
-require '../classes/EquipmentShop.php';
-
-
-	for($nr = 0; $nr<=20; $nr++){
-		if(isset($_POST["insert$nr"])){
-			$soldMinerals = new EquipmentShop;
-			$soldMinerals->sell($nr);
-		}
-	}
+require '../classes/ActionEquipment.php';
+$equipmentShop = new ActionEquipment();
+$equipmentShop->sellMinerals();
 	
 require '../core/FormSending.php';
 FormSending::preventSendingData();
@@ -29,7 +23,6 @@ $advance = new LevelUpdateSession();
 require '../classes/DataGenerator.php';
 $data = new DataRowGenerator();
 $data = $data->getDataRow('user_data', 'level');
-echo $data;
 
 require '../views/equipment.php';
 

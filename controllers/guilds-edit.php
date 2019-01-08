@@ -2,12 +2,11 @@
 
 	require_once '../views/partials/logged-checking.php';
 	
-	require '../classes/Guild.php';
-
-	if(isset($_POST['guildDescription']) || isset($_POST['guildLeader'])){
-		$guilds = new Guild;
-		$guilds3 = $guilds->editGuild();
-	}
+	require '../classes/ActionGuild.php';
+	$guilds = new ActionGuild;
+	$guilds->editGuildLeaderMode();
+	$guilds->editGuildMemberMode();
+	
 	require '../core/FormSending.php';
 	FormSending::preventSendingData();
 

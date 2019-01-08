@@ -3,22 +3,18 @@
 // obiekt Missions pozwalający na wykonanie misji 
 // obiekt Missions that allows to getting missions
 
-class Missions{
+require '../classes/GuildExpGenerator.php';
 
-		public static function addGuildExp($exp){
-			
-			$query = require '../core/bootstrap.php';
-			$guildMemberData = $query->select("SELECT user, id_guild FROM user_data WHERE user = '$userName'");
-			$idGuild = $guildMemberData['id_guild'];
-			$query->update("UPDATE guilds_data SET guild_exp = guild_exp + $exp WHERE id_guild = '$idGuild'");
-			
-		}
-	
+class MissionInitiation extends GuildExpGenerator{
+
 	public function getMission($nr){
 
 		$query = require '../core/bootstrap.php';
-		$equipment = $query->select("SELECT * FROM user_data JOIN basic_equipment JOIN rare_equipment ON user_data.user=basic_equipment.user
-			WHERE user_data.user = '$userName' AND basic_equipment.user = '$userName' AND rare_equipment.user = '$userName'");
+		$equipment = $query->selectBindValue(
+			"SELECT * FROM user_data 
+			JOIN basic_equipment JOIN rare_equipment ON user_data.user=basic_equipment.user
+			WHERE user_data.user = ? AND basic_equipment.user = ? AND rare_equipment.user = ?",
+			$bindedValues = [$userName, $userName, $userName]);
 		$idGuild = $equipment['id_guild'];
 		
 		$minerals = ['diamonds', 'rubies', 'agates', 'sapphires', 'emeralds', 'topazes', 'turquoises', 'amethysts', 'malachites'];
@@ -89,11 +85,23 @@ class Missions{
 
 		$newExpAmount = $equipment['exp'] + 1000;
 
-		$query->update("UPDATE basic_equipment SET $minerals[$nr] = $newMineralAmount WHERE user = '$userName'");
-		$query->update("UPDATE rare_equipment SET $minerals2[$nr] = $newMineralAmount2 WHERE user = '$userName'");
-		$query->update("UPDATE user_data SET exp = $newExpAmount WHERE user = '$userName'");
+		$query->updateBindValue(
+			"UPDATE basic_equipment 
+			SET $minerals[$nr] = ? 
+			WHERE user = ?",
+			$bindedValues = [$newMineralAmount, $userName]);
+		$query->updateBindValue(
+			"UPDATE rare_equipment 
+			SET $minerals2[$nr] = ? 
+			WHERE user = ?",
+			$bindedValues = [$newMineralAmount2, $userName]);
+		$query->updateBindValue(
+			"UPDATE user_data 
+			SET exp = $newExpAmount 
+			WHERE user = ?",
+			$bindedValues = [$newExpAmount, $userName]);
 		if($idGuild !== 0){
-			Missions::addGuildExp(1000);
+			GuildExpGenerator::addGuildExp(1000);
 		}	
 
 		if($idGuild == 0){

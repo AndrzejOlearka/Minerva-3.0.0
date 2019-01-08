@@ -2,8 +2,10 @@
 
 			/* pobieranie czasu potrzebnego do wyświetlania czasu zakończenia
 			 zadania w AJAX na ekspedycje.php po kliknięciu rozpoczęcia zadania lub odświeżeniu*/
-			 
-	class ExpeditionEndTimeInfo{
+	
+	require_once "../classes/ExpeditionsOperations.php";
+				 
+	class ExpeditionEndTimeInfo extends ExpeditionsOperations{
 
 		public function getEndTime(){
 			

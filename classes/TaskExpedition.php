@@ -1,7 +1,7 @@
 ﻿<?php
 
 require_once "../classes/Tasks.php";
-require '../classes/ExpeditionInitiation.php';
+require '../classes/ExpeditionRequest.php';
 require '../classes/ExpeditionEndTimeInfo.php';
 require '../classes/ExpeditionAbort.php';
 require '../classes/ExpeditionFinish.php';	
@@ -10,9 +10,9 @@ require '../classes/ExpeditionFinish.php';
 
 		public function initiateExpedition(){
 			if(isset($_POST['zadanie'])){
-				$expedition = new ExpeditionInitiation($_POST['zadanie']);
-				$expedition->setNewCoinsAmount($_POST['zadanie']);
-				$expedition->setExpeditionNumberTime($_POST['zadanie']);
+				$expedition = new ExpeditionRequest($_POST['zadanie']);
+				$expedition->setExpeditionNumberTime();				
+				$expedition->setNewCoinsAmount();
 			}
 		}
 
@@ -34,7 +34,7 @@ require '../classes/ExpeditionFinish.php';
 			}
 		}
 		
-		public function showExpedtionInfo(){	
+		public function showExpeditionInfo(){	
 			$expeditionFinish = new ExpeditionFinish();
 			return $expeditionArray = $expeditionFinish->showExpeditionDetails();
 		}

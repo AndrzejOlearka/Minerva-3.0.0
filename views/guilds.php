@@ -69,8 +69,9 @@
 				$advance->advance($i);
 			}
 			
-			$guilds2 = $guilds->toggleGuild();
-			$guilds1 = $guilds->showGuild();
+			$guildAction->showGuilds();
+			$guildAction->editGuildMemberMode();
+			$guildAction->editGuildLeaderMode();
 			
 			
 			?>

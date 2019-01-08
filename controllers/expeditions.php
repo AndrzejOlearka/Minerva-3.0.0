@@ -8,7 +8,7 @@
 	$expedition->initiateExpedition();
 	$expedition->getExpeditionEndTime();
 	$expedition->stopExpedition();
-	$expeditionArray = $expedition->showExpedtionInfo();
+	$expeditionArray = $expedition->showExpeditionInfo();
 	
 	require '../sessions/expeditions-sessions.php';
 	$expeditionSession = new ExpeditionsSessions();

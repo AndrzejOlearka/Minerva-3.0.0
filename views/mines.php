@@ -39,10 +39,6 @@
 			<br /><br /><h1>Witaj <?php echo $_SESSION['user'];?> !</h1>
 
 <?php
-if(isset($_SESSION['daily_Prize_Info'])){
-	formMinesDailyPrize();
-}
-unset($_SESSION['daily_Prize_Info']);
 
 if(isset($formMinesDailyPrize)){
 	echo $formMinesDailyPrize;

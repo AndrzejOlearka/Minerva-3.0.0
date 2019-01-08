@@ -43,7 +43,7 @@
 				<div class="row prem">
 					<div class="edit row col-12 col-sm-8 col-lg-4 offset-sm-2 offset-lg-4">
 						<div class="col-12">
-							<form action="account-edit-server.php" method="post" class="row">
+							<form action="../controllers/account-edit.php" method="post" class="row">
 								<input type="text" name="nick" class="col-10 col-sm-6 offset-1 offset-sm-3">
 								<input type="submit" name="editNick" value="Zmień Nick!"  class="col-10 col-sm-6 offset-1 offset-sm-3">
 							</form>

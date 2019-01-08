@@ -3,11 +3,11 @@
 	require_once '../views/partials/logged-checking.php';
 	
 	require '../classes/Guild.php';
+	require '../classes/ActionGuild.php';
 
-	if(isset($_POST['guildName'])){
-		$guilds = new Guild;
-		$guildss = $guilds->createGuild();
-	}
+	$guild = new ActionGuild;
+	$guild->createGuild();
+	
 			
 	require '../sessions/guilds-sessions.php';
 	$guildsSession = new GuildSessions();

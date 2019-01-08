@@ -2,8 +2,8 @@
 
 	require_once '../views/partials/logged-checking.php';
 	
-	require '../classes/Guild.php';
-	$guilds = new Guild;
+	require '../classes/ActionGuild.php';
+	$guildAction = new ActionGuild();
 			
 	require '../sessions/guilds-sessions.php';
 	$guildsSession = new GuildSessions();

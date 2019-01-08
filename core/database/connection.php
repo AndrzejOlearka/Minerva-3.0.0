@@ -1,12 +1,17 @@
 <?php
 
+include "../core/database/iConnectionInfo.php";
 
-Class Connection{
+Class Connection implements iConnectionInfo{
 
 	public static function connectToMinervaGameDB(){
 
 		try{
-			return $pdo = new PDO ('mysql:host=localhost;dbname=minerva_game_db', 'root', '', [PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+			return $pdo = new PDO (
+				iConnectionInfo::HOST,
+				iConnectionInfo::USER,
+				iConnectionInfo::PASSWORD,
+				iConnectionInfo::SETTINGS);
 		}
 		catch(PDOexception $error){
 			echo $error->getMessage();

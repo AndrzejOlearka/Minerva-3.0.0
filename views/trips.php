@@ -54,16 +54,16 @@
 <?php	
 
 
-if(isset($postRefreshAjax)){
-	echo $postRefreshAjax;
+if(isset($tripArray['postRefreshAjax'])){
+	echo $tripArray['postRefreshAjax'];
 }
 
-if(isset($tripInfo)){
-	echo $tripInfo;
+if(isset($tripArray['tripInfo'])){
+	echo $tripArray['tripInfo'];
 }
 
-if(isset($tripPrizeInfo)){
-	echo $tripPrizeInfo;
+if(isset($tripArray['tripPrizeInfo'])){
+	echo $tripArray['tripPrizeInfo'];
 }
 
 $tripSession->tripsErrorStoppedTrip();

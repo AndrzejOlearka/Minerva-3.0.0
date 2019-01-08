@@ -11,8 +11,8 @@ $mineral = [
 ];
 			
 		for($nr = 0; $nr<=20; $nr++){
-			if(isset($_SESSION["coins"])){
-				echo "<br /><h2>Sprzedałeś ".$_SESSION["value"]." ".$_SESSION["minerals$mineral[$nr]"].
+			if(isset($_SESSION["coins"]) && isset($_SESSION["minerals{$mineral[$nr]}"])){
+				echo "<br /><h2>Sprzedałeś ".$_SESSION["value"]." ".$_SESSION["minerals{$mineral[$nr]}"].
 				" o łącznej wartości <span style='color:#ff9900'>".$_SESSION["coins"]." </span>monet!<br /></h2>";
 				unset($_SESSION["coins"]);
 				unset($_SESSION["value"]);

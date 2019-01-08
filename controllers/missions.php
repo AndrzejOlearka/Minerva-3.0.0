@@ -2,14 +2,10 @@
 
 	require_once '../views/partials/logged-checking.php';
 	
-	require '../classes/Missions.php';
+	require '../classes/TaskMission.php';
 	
-	for($nr = 0; $nr<=8; $nr++){
-		if(isset($_POST["mission$nr"])){
-			$mission = new Missions();
-			$mission->getMission($nr);
-		}
-	}
+	$mission = new TaskMission();
+	$mission->executeMission();
 		
 	require '../sessions/missions-sessions.php';
 	$missionSession = new MissionsSession();

@@ -58,7 +58,7 @@
 			?>
 
 			<div class="row">
-				<form method="post" class="createGuild col-lg-6 offset-3" action="guilds-creating.php" enctype="multipart/form-data">
+				<form method="post" class="createGuild col-lg-6 offset-3" action="../controllers/guilds-creating.php" enctype="multipart/form-data">
 					<div class="row">
 						<label for "guildName" class="col-lg-6">Nazwa Gildii: </label>
 						<input type="text" name="guildName"class="col-lg-5"/>

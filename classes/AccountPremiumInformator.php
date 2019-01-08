@@ -3,19 +3,16 @@
 // skrypt pozwalający na pokazywanie ile zostało premium do końca
 // script allowing to show when the premium going to end
 
-class AccountPremiumInfo{
+require_once "../classes/AccountOperations.php";
 
-	public static function getInfo(){
-		
-		$query = require '../core/bootstrap.php';
+class AccountPremiumInformator extends AccountOperations{
 
-		$data = $query->select("SELECT * FROM user_data WHERE user = '$userName'");
+	public function getPremiumInfo(){
 
-		$dateTime = new DateTime();
-		$dateTime->format('Y-m-d H:i:s');
-		$timeEnd = DateTime::createFromFormat('Y-m-d H:i:s', $data['premium_end']);
-		$timeDiff = $dateTime->diff($timeEnd);
-		$timeEnd->format('Y/m/d H:i:s');
+		$dateTime = $this->getCurrentDate();
+		$timeEnd = $this->getDateTime('user_data', 'premium_end');	
+		$timeDiff = $this->getDateTimeDiff('user_data', 'premium_end');		
+
 		$time1 = "Pozostało <span style='color: #66cc00'>".$timeDiff->format('%d dni i %h godz,').
 			"</span> do zakończenia premium. <span style='color: blue'>Przedłuż już teraz!</span><br />";
 		$time2 = "Pozostało <span style='color: #66cc00'>".$timeDiff->format('%h godz, %i min, %s sek').

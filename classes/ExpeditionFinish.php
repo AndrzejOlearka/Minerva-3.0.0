@@ -1,37 +1,46 @@
 ﻿<?php
 	// określenie nagrody za ekspedycje
 
-	require_once "../classes/ExpeditionsActions.php";
+	require_once "../classes/ExpeditionsOperations.php";
 	
-	class ExpeditionFinish extends ExpeditionsActions{
+	class ExpeditionFinish extends ExpeditionsOperations{
+		
+			public function __construct(){
+				parent::__construct();	
+				$this->expeditionNumber = $this->getExpeditionNumber();
+			}
 		
 		private function getExpeditionPrize($expeditionNumber){
-			$query = require '../core/bootstrap.php';
-			$query->update("UPDATE expeditions_data SET expedition_number = 0 WHERE user = '$userName'");
 			require '../classes/ExpeditionPrize.php';	
+			$this->query->updateBindValue(
+				"UPDATE expeditions_data 
+				SET expedition_number = 0 
+				WHERE user = ?",
+				$bindedVariables = [$this->userName]);
 			$expeditionPrize = new ExpeditionPrize();
 			return $expeditionPrizeInfo = $expeditionPrize->getExpeditionPrize($expeditionNumber);		
+		}	
+		
+		private function getPrizePermission(){
+			$dataUserPrizePermission = $this->query->selectBindValue(
+				"SELECT expedition_prize 
+				FROM expeditions_data 
+				WHERE user = ?",
+				$bindedVariables = [$this->userName]);
+			return $dataUserPrizePermission = $dataUserPrizePermission['expedition_prize'];
 		}
 		
 		public function showExpeditionDetails(){
-			$dateTime = $this->getCurrentDate();		
-			$endTime = require "../classes/DateTimeInfo.php";
-			$expeditionTime = DateTimeInfo::getDateTime('expeditions_data', 'expedition_end');
-			
-			$query = require '../core/bootstrap.php';
-			$data = $query->select("SELECT expedition_number, expedition_prize FROM expeditions_data WHERE user = '$userName'");
-			$expeditionNumber = $this->getExpeditionNumber();
-			
-			if($dateTime<$expeditionTime){
-				$postRefreshAjax = "<br /><div><h2 id='czas' data-czas='$expeditionNumber'></h2></div><br />";
+			if($this->getCurrentDate() < $this->getExpeditionEndTime()){
+				$postRefreshAjax = "<br /><div><h2 id='czas' data-czas='".$this->expeditionNumber."'></h2></div><br />";
 				return $expeditionArray = ['postRefreshAjax' => $postRefreshAjax];
 			}
 			else{
 				$expeditionInfo = "<h2 id='expedition'>W tej chwili nie wykonujesz żadnych ekspedycji.</h2><br>";
 				$expeditionArray = ['expeditionInfo' => $expeditionInfo];
 				
-				if($data['expedition_prize'] == true && !isset($_SESSION['expedition_stopped'])){
-					$expeditionPrizeInfo = $this->getExpeditionPrize($expeditionNumber);				
+				if($this->getPrizePermission() == true && !isset($_SESSION['expedition_stopped'])){
+					$expeditionPrizeInfo = $this->getExpeditionPrize($this->expeditionNumber );				
 					$expeditionArrayNext =['expeditionPrizeInfo' => $expeditionPrizeInfo];
 					return $expeditionArray = array_merge($expeditionArray, $expeditionArrayNext);			
 				}

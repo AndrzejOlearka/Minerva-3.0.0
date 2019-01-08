@@ -31,7 +31,7 @@ $('input[name="wyprawy"]').click(function(){
 				if (wyprawa-1 == i){break;}
 			}
 			tekst.textContent = "W tej chwili wykonujesz wyprawę "+e;
-			var time = document.querySelector('#trip');
+			var trip = document.querySelector('#trip');
 			$form = $("<form method='post' action='../controllers/trips.php'></form>");
 			$form.append('<input type="submit" name="stopTrip" value="Przerwij wyprawę!">');
 			$form.addClass('row col-6 offset-3');
