@@ -1,0 +1,119 @@
+﻿.name p,.value p, .sell form{
+	border: 7px solid #336699;
+	background-color: #59A8A4;
+	padding: 10px;
+}
+
+.name[data-popup-open]:hover{
+	cursor: pointer;
+	color: #336699;
+}
+
+.photo img {
+	border: 7px solid #336699;
+	border-radius: 55px;
+	width: 110px;
+	height: 110px;
+}
+
+
+.equipment:hover{
+	transform: scale(1.05, 1.05);
+	transition: all .2s ease-in-out;
+	filter: brightness(115%);
+}
+
+.popupEquipment{
+    width:100%;
+    height:100%;
+    display:none;
+    position:fixed;
+    top:0px;
+    left:0px;
+    background:rgba(0,0,0,0.75);
+	z-index: 1;	
+
+}
+
+.popupDescription{
+    max-width:900px;  
+    width:70%;
+    padding:40px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translate(-50%, -50%);
+    transform:translate(-50%, -50%);
+    border:10px solid #336699;
+    background:#59A8A4;
+	color:  #e3e3e3;
+	z-index: 1;
+	font-size: 20px;
+	box-shadow: 2px 2px 2px #283540;
+	line-height: 140%;
+}
+
+.popupEquipment img{
+	width: 100%;
+	height: 100%;
+	border:10px solid #336699;
+}
+
+.popupDescription p{
+	border:10px solid #336699;
+	height: 100%;
+	padding:20px;
+	text-indent: 30px;
+	text-align: justify;	
+}
+
+
+.popupEquipment h1:hover{
+	cursor: pointer;
+	color: #336699;
+}
+
+.basicMineral,.advancedMineral{
+	margin-bottom:30px;
+	
+}
+
+.mineral,.hiddenMineral{
+	border: 7px solid #336699;
+	background-color: #59A8A4;
+	padding: 10px;
+	width: 80% !important;
+	height:220px;
+}
+
+#slider {
+	border-color: #59A8A4; 
+} 
+
+.sellingForm{
+	display: flex; /* 2. display flex to the rescue */
+	flex-direction: row;
+}
+
+.slider{
+	margin-left: 20px;
+	margin-right: 20px;}
+
+.sellingForm input{
+	margin:10px;
+}
+
+.hiddenMineral{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #3e6462; 
+}
+
+#advancedMinerals,#basicMinerals{
+	display:none;
+}
+
+#basicShow,#advancedShow{
+	cursor:pointer;
+}

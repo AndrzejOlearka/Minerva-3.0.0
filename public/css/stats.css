@@ -1,0 +1,29 @@
+﻿.search{
+	border: 7px solid #336699;
+	background-color: #59A8A4;
+	padding: 15px;
+	text-shadow: 3px 3px 3px #335699;
+	color: #e3e3e3;
+	letter-spacing: 1px;
+}
+
+#search{
+	margin-left: 0px;
+}
+
+table td, table tr, table th{
+	border: 10px solid #336699;
+	background-color: #59A8A4;
+	color: #e3e3e3;
+	letter-spacing: 1px;
+}
+
+table:hover, .search:hover{
+	transform: scale(1.05, 1.05);
+	transition: all .2s ease-in-out;
+	filter: brightness(105%);	
+}
+
+
+
+

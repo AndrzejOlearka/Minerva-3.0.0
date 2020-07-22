@@ -1,0 +1,58 @@
+<?php
+
+namespace App\Http\Controllers\Auth;
+
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+
+class LoginController extends Controller
+{
+    /*
+    |--------------------------------------------------------------------------
+    | Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
+    |
+    */
+
+    use AuthenticatesUsers;
+
+    /**
+     * Undocumented function
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\User $user
+     *
+     * @return redirect
+     */
+    protected function authenticated(Request $request, $user)
+    {
+        if(empty($user->moderator)){
+            return redirect('/equipment');
+        }
+        if($user->moderator->type == 'admin'){
+            return redirect('/admin');
+        }
+        return redirect('/equipment');
+    }
+    
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+        $this->saveLastLogin();
+    }
+
+    protected function saveLastLogin(){
+        //dd($this);
+    }
+}
